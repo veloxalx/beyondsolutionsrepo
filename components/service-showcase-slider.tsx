@@ -117,11 +117,11 @@ export default function ServiceShowcaseSlider() {
   }
 
   return (
-    <div className="relative max-w-6xl mx-auto my-16" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div className="relative max-w-6xl mx-auto my-20" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="absolute top-1/2 -left-6 md:-left-16 transform -translate-y-1/2 z-10">
         <button
           onClick={prevSlide}
-          className="w-14 h-14 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 group"
+          className="w-16 h-16 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 group"
           aria-label="Previous service"
         >
           <ChevronLeft className="h-6 w-6 text-white group-hover:text-[#F5A623] transition-colors" />
@@ -131,14 +131,14 @@ export default function ServiceShowcaseSlider() {
       <div className="absolute top-1/2 -right-6 md:-right-16 transform -translate-y-1/2 z-10">
         <button
           onClick={nextSlide}
-          className="w-14 h-14 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 group"
+          className="w-16 h-16 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-xl flex items-center justify-center hover:bg-white/10 transition-all duration-300 group"
           aria-label="Next service"
         >
           <ChevronRight className="h-6 w-6 text-white group-hover:text-[#F5A623] transition-colors" />
         </button>
       </div>
 
-      <div className="h-[500px] md:h-[550px] overflow-hidden rounded-3xl">
+      <div className="h-[550px] md:h-[600px] overflow-hidden rounded-3xl">
         <AnimatePresence custom={direction} mode="wait">
           <motion.div
             key={currentIndex}
@@ -147,7 +147,7 @@ export default function ServiceShowcaseSlider() {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="h-full w-full"
           >
             <div className="relative h-full w-full bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
@@ -163,38 +163,38 @@ export default function ServiceShowcaseSlider() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
 
-              <div className="relative h-full flex flex-col md:flex-row items-center p-10 md:p-16 z-10">
-                <div className="md:w-3/5 space-y-8">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F5A623]/10 backdrop-blur-md text-white font-medium text-sm border border-[#F5A623]/20">
+              <div className="relative h-full flex flex-col md:flex-row items-center p-12 md:p-20 z-10">
+                <div className="md:w-3/5 space-y-10">
+                  <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#F5A623]/10 backdrop-blur-md text-white font-medium text-sm border border-[#F5A623]/20">
                     <Trophy className="h-4 w-4 text-[#F5A623]" />
                     <span>Industry-Leading Service</span>
                   </div>
 
-                  <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight">
+                  <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight">
                     {services[currentIndex].title}
                   </h2>
 
-                  <p className="text-xl text-white/80 leading-relaxed">{services[currentIndex].description}</p>
+                  <p className="text-xl text-white/80 leading-relaxed max-w-xl">{services[currentIndex].description}</p>
 
-                  <Button className="bg-gradient-to-r from-[#F5A623] to-[#FF4D00] hover:from-[#F5A623]/90 hover:to-[#FF4D00]/90 text-black rounded-full group mt-4 px-8 py-6 text-lg shadow-lg shadow-[#F5A623]/20 transition-all hover:shadow-xl hover:shadow-[#F5A623]/30 hover:-translate-y-1 border border-[#F5A623]/20">
+                  <Button className="bg-gradient-to-r from-[#F5A623] to-[#FF4D00] hover:from-[#F5A623]/90 hover:to-[#FF4D00]/90 text-black rounded-full group mt-4 px-10 py-7 text-lg shadow-lg shadow-[#F5A623]/20 transition-all hover:shadow-xl hover:shadow-[#F5A623]/30 hover:-translate-y-1 border border-[#F5A623]/20">
                     <span>{services[currentIndex].cta}</span>
                     <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
 
                 <div className="md:w-2/5 mt-10 md:mt-0 md:pl-10">
-                  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-xl">
-                    <h3 className="text-2xl font-semibold text-white mb-6 flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#F5A623]/20 flex items-center justify-center flex-shrink-0">
-                        <Trophy className="h-4 w-4 text-[#F5A623]" />
+                  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-10 border border-white/10 shadow-xl">
+                    <h3 className="text-2xl font-semibold text-white mb-8 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-[#F5A623]/20 flex items-center justify-center flex-shrink-0">
+                        <Trophy className="h-5 w-5 text-[#F5A623]" />
                       </div>
                       Proven Results
                     </h3>
-                    <ul className="space-y-5">
+                    <ul className="space-y-6">
                       {services[currentIndex].results.map((result, i) => (
-                        <li key={i} className="flex items-start gap-4">
-                          <div className="w-6 h-6 rounded-full bg-[#F5A623]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Check className="h-3.5 w-3.5 text-[#F5A623]" />
+                        <li key={i} className="flex items-start gap-5">
+                          <div className="w-7 h-7 rounded-full bg-[#F5A623]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Check className="h-4 w-4 text-[#F5A623]" />
                           </div>
                           <span className="text-white/90 text-lg">{result}</span>
                         </li>
@@ -208,7 +208,7 @@ export default function ServiceShowcaseSlider() {
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center mt-8 gap-3">
+      <div className="flex justify-center mt-10 gap-3">
         {services.map((_, i) => (
           <button
             key={i}
@@ -216,9 +216,9 @@ export default function ServiceShowcaseSlider() {
               setDirection(i > currentIndex ? 1 : -1)
               setCurrentIndex(i)
             }}
-            className={`transition-all duration-300 ${
+            className={`transition-all duration-500 ${
               i === currentIndex
-                ? "w-10 h-3 bg-[#F5A623] rounded-full"
+                ? "w-12 h-3 bg-[#F5A623] rounded-full"
                 : "w-3 h-3 bg-white/20 hover:bg-white/40 rounded-full"
             }`}
             aria-label={`Go to service ${i + 1}`}
