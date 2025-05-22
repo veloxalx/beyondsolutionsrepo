@@ -208,117 +208,134 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="lg:hidden fixed inset-0 bg-black/95 backdrop-blur-md z-0 pt-24"
-        >
-          <div className="container mx-auto px-6 py-10 flex flex-col gap-8">
-            <div className="border-b border-white/10 pb-4">
-              <button
-                onClick={() => toggleDropdown("mobile-solutions")}
-                className="w-full text-left text-xl font-medium text-white hover:text-[#F5A623] transition-colors py-4 flex justify-between items-center"
-              >
-                Solutions
-                <ChevronDown
-                  className={cn(
-                    "h-5 w-5 transition-transform",
-                    activeDropdown === "mobile-solutions" ? "rotate-180" : "",
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="lg:hidden fixed inset-0 bg-black/95 backdrop-blur-md z-40 pt-24"
+          >
+            <div className="container mx-auto px-6 py-10 flex flex-col gap-8">
+              <div className="border-b border-white/10 pb-4">
+                <button
+                  onClick={() => toggleDropdown("mobile-solutions")}
+                  className="w-full text-left text-xl font-medium text-white hover:text-[#F5A623] transition-colors py-4 flex justify-between items-center"
+                >
+                  Solutions
+                  <ChevronDown
+                    className={cn(
+                      "h-5 w-5 transition-transform",
+                      activeDropdown === "mobile-solutions" ? "rotate-180" : "",
+                    )}
+                  />
+                </button>
+                <AnimatePresence>
+                  {activeDropdown === "mobile-solutions" && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="pl-4 space-y-3 py-2"
+                    >
+                      {[
+                        "Elite Revenue Growth",
+                        "Superior Operational Excellence",
+                        "Premier Digital Transformation",
+                        "Unrivaled Market Expansion",
+                      ].map((solution, i) => (
+                        <Link
+                          key={i}
+                          href={`/solutions/${solution.toLowerCase().replace(/\s+/g, "-")}`}
+                          className="block text-white/80 hover:text-[#F5A623] py-2"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false)
+                            setActiveDropdown(null)
+                          }}
+                        >
+                          {solution}
+                        </Link>
+                      ))}
+                    </motion.div>
                   )}
-                />
-              </button>
-              <AnimatePresence>
-                {activeDropdown === "mobile-solutions" && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="pl-4 space-y-3 py-2"
-                  >
-                    {[
-                      "Elite Revenue Growth",
-                      "Superior Operational Excellence",
-                      "Premier Digital Transformation",
-                      "Unrivaled Market Expansion",
-                    ].map((solution, i) => (
-                      <Link
-                        key={i}
-                        href={`/solutions/${solution.toLowerCase().replace(/\s+/g, "-")}`}
-                        className="block text-white/80 hover:text-[#F5A623] py-2"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {solution}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                </AnimatePresence>
+              </div>
 
-            <div className="border-b border-white/10 pb-4">
-              <button
-                onClick={() => toggleDropdown("mobile-industries")}
-                className="w-full text-left text-xl font-medium text-white hover:text-[#F5A623] transition-colors py-4 flex justify-between items-center"
-              >
-                Industries
-                <ChevronDown
-                  className={cn(
-                    "h-5 w-5 transition-transform",
-                    activeDropdown === "mobile-industries" ? "rotate-180" : "",
+              <div className="border-b border-white/10 pb-4">
+                <button
+                  onClick={() => toggleDropdown("mobile-industries")}
+                  className="w-full text-left text-xl font-medium text-white hover:text-[#F5A623] transition-colors py-4 flex justify-between items-center"
+                >
+                  Industries
+                  <ChevronDown
+                    className={cn(
+                      "h-5 w-5 transition-transform",
+                      activeDropdown === "mobile-industries" ? "rotate-180" : "",
+                    )}
+                  />
+                </button>
+                <AnimatePresence>
+                  {activeDropdown === "mobile-industries" && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="pl-4 space-y-3 py-2"
+                    >
+                      {["Technology", "Financial Services", "Healthcare", "Manufacturing"].map((industry, i) => (
+                        <Link
+                          key={i}
+                          href={`/industries/${industry.toLowerCase().replace(/\s+/g, "-")}`}
+                          className="block text-white/80 hover:text-[#F5A623] py-2"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false)
+                            setActiveDropdown(null)
+                          }}
+                        >
+                          {industry}
+                        </Link>
+                      ))}
+                    </motion.div>
                   )}
-                />
-              </button>
-              <AnimatePresence>
-                {activeDropdown === "mobile-industries" && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="pl-4 space-y-3 py-2"
-                  >
-                    {["Technology", "Financial Services", "Healthcare", "Manufacturing"].map((industry, i) => (
-                      <Link
-                        key={i}
-                        href={`/industries/${industry.toLowerCase().replace(/\s+/g, "-")}`}
-                        className="block text-white/80 hover:text-[#F5A623] py-2"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {industry}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                </AnimatePresence>
+              </div>
+
+              <Link
+                href="/case-studies"
+                className="text-xl font-medium text-white hover:text-[#F5A623] transition-colors py-4 border-b border-white/10"
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  setActiveDropdown(null)
+                }}
+              >
+                Success Stories
+              </Link>
+
+              <Link
+                href="/about"
+                className="text-xl font-medium text-white hover:text-[#F5A623] transition-colors py-4 border-b border-white/10"
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  setActiveDropdown(null)
+                }}
+              >
+                About
+              </Link>
+
+              <Button
+                className="bg-gradient-to-r from-[#F5A623] to-[#FF4D00] hover:from-[#F5A623]/90 hover:to-[#FF4D00]/90 text-black w-full mt-4 rounded-full py-6 text-lg"
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  setActiveDropdown(null)
+                }}
+              >
+                Schedule Consultation
+              </Button>
             </div>
-
-            <Link
-              href="/case-studies"
-              className="text-xl font-medium text-white hover:text-[#F5A623] transition-colors py-4 border-b border-white/10"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Success Stories
-            </Link>
-
-            <Link
-              href="/about"
-              className="text-xl font-medium text-white hover:text-[#F5A623] transition-colors py-4 border-b border-white/10"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-
-            <Button
-              className="bg-gradient-to-r from-[#F5A623] to-[#FF4D00] hover:from-[#F5A623]/90 hover:to-[#FF4D00]/90 text-black w-full mt-4 rounded-full py-6 text-lg"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Schedule Consultation
-            </Button>
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
       </AnimatePresence>
     </header>
   )
