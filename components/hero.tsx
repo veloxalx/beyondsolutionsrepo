@@ -237,7 +237,7 @@ const Hero = () => {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
-                        className="text-lg text-white/85 leading-relaxed mb-8 max-w-3xl font-light"
+                        className="text-lg text-white/85 leading-relaxed mb-8 max-w-3xl font-light white/80"
                       >
                         {currentService.description}
                       </motion.p>
