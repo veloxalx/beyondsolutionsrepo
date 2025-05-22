@@ -571,7 +571,7 @@ const Hero = () => {
                 </div>
                 
                 {/* Elegant Divider */}
-                <motion.div 
+                {/* <motion.div 
                   className="hidden lg:block w-px h-32 bg-gradient-to-b from-transparent via-orange-500/50 to-transparent relative"
                   initial={{ scaleY: 0 }}
                   animate={{ scaleY: 1 }}
@@ -665,7 +665,7 @@ const Hero = () => {
                       </div>
                     </motion.div>
                   </motion.div>
-                </div>
+                </div> */}
               </div>
             </div>
           </motion.div>
