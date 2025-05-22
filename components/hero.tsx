@@ -102,11 +102,11 @@ const Hero = () => {
     { name: "FutureCo", logo: "FC" }
   ]
 
-  // Auto-rotate services
+  // Faster auto-rotate services - reduced from 5000ms to 2500ms
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentServiceIndex((prev) => (prev + 1) % services.length)
-    }, 5000) // 5 seconds per card for better readability
+    }, 2500) // 2.5 seconds per card for faster transitions
 
     return () => clearInterval(interval)
   }, [services.length])
@@ -124,7 +124,7 @@ const Hero = () => {
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-orange-500/10 via-transparent to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-tr from-orange-600/5 via-transparent to-transparent"></div>
-          <div className={`absolute inset-0 bg-gradient-to-br ${currentService.bgGradient} transition-all duration-1000 ease-out`}></div>
+          <div className={`absolute inset-0 bg-gradient-to-br ${currentService.bgGradient} transition-all duration-500 ease-out`}></div>
         </div>
         
         {/* Sophisticated pattern overlay */}
@@ -178,9 +178,9 @@ const Hero = () => {
                   animate={{ x: 0, opacity: 1, rotateY: 0, scale: 1 }}
                   exit={{ x: -400, opacity: 0, rotateY: -45, scale: 0.8 }}
                   transition={{ 
-                    duration: 0.9, 
+                    duration: 0.5, // Reduced from 0.9 to 0.5
                     ease: [0.25, 0.46, 0.45, 0.94],
-                    opacity: { duration: 0.6 }
+                    opacity: { duration: 0.3 } // Reduced from 0.6 to 0.3
                   }}
                   className="relative group"
                   style={{ perspective: '1200px' }}
@@ -189,11 +189,11 @@ const Hero = () => {
                   <div className="relative p-10 md:p-16 rounded-3xl bg-gradient-to-br from-gray-900/95 via-black/90 to-gray-900/95 backdrop-blur-xl border border-orange-500/20 shadow-2xl shadow-orange-500/10 overflow-hidden">
                     
                     {/* Animated Background Gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${currentService.bgGradient} opacity-60 transition-all duration-1000`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-br ${currentService.bgGradient} opacity-60 transition-all duration-500`}></div>
                     
                     {/* Glowing Border Effect */}
                     <div className="absolute inset-0 rounded-3xl">
-                      <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${currentService.accentColor} opacity-20 blur-xl transition-all duration-1000`}></div>
+                      <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${currentService.accentColor} opacity-20 blur-xl transition-all duration-500`}></div>
                     </div>
                     
                     {/* Content Container */}
@@ -203,8 +203,8 @@ const Hero = () => {
                         <motion.div
                           initial={{ scale: 0, rotate: -180 }}
                           animate={{ scale: 1, rotate: 0 }}
-                          transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.4 }}
-                          className={`flex-shrink-0 w-24 h-24 rounded-2xl bg-gradient-to-br ${currentService.primaryColor} flex items-center justify-center shadow-xl shadow-orange-500/30 relative overflow-hidden group-hover:scale-110 transition-transform duration-500`}
+                          transition={{ duration: 0.4, delay: 0.1, type: "spring", bounce: 0.4 }} // Reduced timing
+                          className={`flex-shrink-0 w-24 h-24 rounded-2xl bg-gradient-to-br ${currentService.primaryColor} flex items-center justify-center shadow-xl shadow-orange-500/30 relative overflow-hidden group-hover:scale-110 transition-transform duration-300`}
                         >
                           <IconComponent className="w-12 h-12 text-white relative z-10" />
                           <div className="absolute inset-0 bg-white/20 rounded-2xl blur-sm"></div>
@@ -214,7 +214,7 @@ const Hero = () => {
                           <motion.p
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
+                            transition={{ duration: 0.3, delay: 0.15 }} // Reduced timing
                             className={`text-sm font-semibold tracking-wide bg-gradient-to-r ${currentService.primaryColor} bg-clip-text text-transparent mb-2`}
                           >
                             {currentService.subtitle}
@@ -222,7 +222,7 @@ const Hero = () => {
                           <motion.h3
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
+                            transition={{ duration: 0.3, delay: 0.2 }} // Reduced timing
                             className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight"
                           >
                             {currentService.title}
@@ -234,7 +234,7 @@ const Hero = () => {
                       <motion.p
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
+                        transition={{ duration: 0.3, delay: 0.25 }} // Reduced timing
                         className="text-lg text-gray-300 leading-relaxed mb-8 max-w-3xl font-light"
                       >
                         {currentService.description}
@@ -244,7 +244,7 @@ const Hero = () => {
                       <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
+                        transition={{ duration: 0.3, delay: 0.3 }} // Reduced timing
                         className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"
                       >
                         {currentService.features.map((feature, index) => (
@@ -259,7 +259,7 @@ const Hero = () => {
                       <motion.div
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.7 }}
+                        transition={{ duration: 0.3, delay: 0.35 }} // Reduced timing
                         className="flex flex-col md:flex-row items-center justify-between gap-6"
                       >
                         <div className={`flex items-center gap-4 px-6 py-4 rounded-2xl bg-gradient-to-r ${currentService.primaryColor} shadow-lg shadow-orange-500/30`}>
@@ -289,13 +289,13 @@ const Hero = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentServiceIndex(index)}
-                    className={`relative transition-all duration-300 ${
+                    className={`relative transition-all duration-200 ${
                       index === currentServiceIndex 
                         ? 'w-12 h-4' 
                         : 'w-4 h-4 hover:w-6'
                     }`}
                   >
-                    <div className={`absolute inset-0 rounded-full transition-all duration-300 ${
+                    <div className={`absolute inset-0 rounded-full transition-all duration-200 ${
                       index === currentServiceIndex 
                         ? `bg-gradient-to-r ${services[index].primaryColor} shadow-lg shadow-orange-500/30` 
                         : 'bg-orange-500/30 hover:bg-orange-400/50'
@@ -313,7 +313,7 @@ const Hero = () => {
                   className={`h-full bg-gradient-to-r ${currentService.primaryColor} rounded-full shadow-lg`}
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
-                  transition={{ duration: 5, ease: "linear", repeat: Infinity }}
+                  transition={{ duration: 2.5, ease: "linear", repeat: Infinity }} // Reduced from 5 to 2.5
                   key={currentServiceIndex}
                 />
               </div>
