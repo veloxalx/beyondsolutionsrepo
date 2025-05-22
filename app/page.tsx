@@ -16,6 +16,7 @@ import IndustryLeadership from "@/components/industry-leadership";
 import AwardsRecognition from "@/components/awards-recognition";
 import Hero from "@/components/hero";
 import CTASection from "@/components/cta-section";
+import WhatsAppContact from "@/components/whatsapp_contact";
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -42,6 +43,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
+      <WhatsAppContact/>
       <Hero />
 
       {/* Awards & Recognition */}

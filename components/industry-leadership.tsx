@@ -19,8 +19,8 @@ const industries = [
       "40% improvement in product development efficiency",
       "65% faster time-to-market for new products",
     ],
-    gradient: "from-orange-500 via-orange-600 to-black",
-    bgGradient: "from-orange-500/30 via-orange-600/20 to-black/10",
+    gradient: "from-orange-500 via-orange-600 to-orange-800",
+    bgGradient: "from-orange-500/30 via-orange-600/20 to-orange-800/10",
     borderGradient: "from-orange-500 to-orange-600"
   },
   {
@@ -40,8 +40,8 @@ const industries = [
       "35% increase in customer satisfaction",
       "60% improvement in regulatory compliance efficiency",
     ],
-    gradient: "from-orange-600 via-orange-700 to-black",
-    bgGradient: "from-orange-600/30 via-orange-700/20 to-black/10",
+    gradient: "from-orange-600 via-orange-700 to-orange-900",
+    bgGradient: "from-orange-600/30 via-orange-700/20 to-orange-900/10",
     borderGradient: "from-orange-600 to-orange-700"
   },
   {
@@ -61,8 +61,8 @@ const industries = [
       "40% reduction in operational costs",
       "35% increase in staff productivity",
     ],
-    gradient: "from-orange-400 via-orange-600 to-black",
-    bgGradient: "from-orange-400/30 via-orange-600/20 to-black/10",
+    gradient: "from-orange-400 via-orange-600 to-orange-800",
+    bgGradient: "from-orange-400/30 via-orange-600/20 to-orange-800/10",
     borderGradient: "from-orange-400 to-orange-600"
   },
   {
@@ -82,8 +82,8 @@ const industries = [
       "40% reduction in supply chain costs",
       "30% increase in product quality metrics",
     ],
-    gradient: "from-orange-300 via-orange-500 to-black",
-    bgGradient: "from-orange-300/30 via-orange-500/20 to-black/10",
+    gradient: "from-orange-300 via-orange-500 to-orange-700",
+    bgGradient: "from-orange-300/30 via-orange-500/20 to-orange-700/10",
     borderGradient: "from-orange-300 to-orange-500"
   },
 ]
@@ -128,7 +128,7 @@ export default function IndustryLeadership() {
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         {/* Enhanced Header with Black & Orange Theme */}
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <div className="inline-block p-1 rounded-full bg-gradient-to-r from-orange-500 via-orange-600 to-black mb-8 shadow-2xl shadow-orange-500/25">
+          <div className="inline-block p-1 rounded-full bg-gradient-to-r from-orange-500 via-orange-600 to-orange-800 mb-8 shadow-2xl shadow-orange-500/25">
             <div className="px-6 py-3 bg-gradient-to-r from-black to-gray-900 rounded-full flex items-center gap-2 border border-orange-500/20">
               <Trophy className="h-5 w-5 text-orange-400" />
               <span className="text-orange-400 font-semibold text-sm tracking-wider uppercase">Industry Leadership</span>
@@ -136,11 +136,11 @@ export default function IndustryLeadership() {
           </div>
           
           <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-tight">
-            <span className="bg-gradient-to-r from-white via-orange-400 to-orange-500 bg-clip-text text-transparent bg-300% animate-gradient-x">
+            <span className="bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 bg-clip-text text-transparent bg-300% animate-gradient-x">
               Unmatched Industry
             </span>
             <br />
-            <span className="bg-gradient-to-r from-orange-500 via-orange-600 to-black bg-clip-text text-transparent animate-gradient-x">
+            <span className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent animate-gradient-x">
               Expertise
             </span>
           </h2>
@@ -218,11 +218,11 @@ export default function IndustryLeadership() {
                   </div>
                   
                   <div>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500/30 via-orange-600/20 to-black/30 backdrop-blur-sm border border-orange-500/30 text-orange-300 font-semibold text-sm mb-2 shadow-lg">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500/30 via-orange-600/20 to-orange-800/30 backdrop-blur-sm border border-orange-500/30 text-orange-300 font-semibold text-sm mb-2 shadow-lg">
                       <Trophy className="h-4 w-4" />
                       <span>Industry Leader</span>
                     </div>
-                    <h3 className="text-3xl font-bold bg-gradient-to-r from-white to-orange-200 bg-clip-text text-transparent">{activeIndustry.name}</h3>
+                    <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-200 to-orange-400 bg-clip-text text-transparent">{activeIndustry.name}</h3>
                   </div>
                 </div>
                 
@@ -238,7 +238,7 @@ export default function IndustryLeadership() {
                       <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${activeIndustry.borderGradient} flex items-center justify-center shadow-lg shadow-orange-500/30`}>
                         <Check className="h-4 w-4 text-white" />
                       </div>
-                      <span className="bg-gradient-to-r from-white to-orange-200 bg-clip-text text-transparent">Our Elite Expertise</span>
+                      <span className="bg-gradient-to-r from-orange-200 to-orange-400 bg-clip-text text-transparent">Our Elite Expertise</span>
                     </h4>
                     <ul className="space-y-4">
                       {activeIndustry.expertise.map((expertise, i) => (
@@ -250,7 +250,7 @@ export default function IndustryLeadership() {
                           <div className={`w-6 h-6 rounded-full bg-gradient-to-r ${activeIndustry.borderGradient} flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-all duration-300 shadow-lg shadow-orange-500/30`}>
                             <Check className="h-3.5 w-3.5 text-white" />
                           </div>
-                          <span className="text-gray-300 text-lg leading-relaxed group-hover:text-white group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-orange-200 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          <span className="text-gray-300 text-lg leading-relaxed group-hover:text-orange-200 transition-all duration-300">
                             {expertise}
                           </span>
                         </li>
@@ -261,10 +261,10 @@ export default function IndustryLeadership() {
                   {/* Results */}
                   <div>
                     <h4 className="text-2xl font-bold mb-6 text-white flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-orange-600 via-orange-700 to-black flex items-center justify-center shadow-lg shadow-orange-600/30">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 flex items-center justify-center shadow-lg shadow-orange-600/30">
                         <Trophy className="h-4 w-4 text-white" />
                       </div>
-                      <span className="bg-gradient-to-r from-white to-orange-200 bg-clip-text text-transparent">Superior Results</span>
+                      <span className="bg-gradient-to-r from-orange-200 to-orange-400 bg-clip-text text-transparent">Superior Results</span>
                     </h4>
                     <ul className="space-y-4">
                       {activeIndustry.results.map((result, i) => (
@@ -273,10 +273,10 @@ export default function IndustryLeadership() {
                           className="flex items-start gap-4 group"
                           style={{ animationDelay: `${i * 0.1 + 0.3}s` }}
                         >
-                          <div className="w-6 h-6 rounded-full bg-gradient-to-r from-orange-600 via-orange-700 to-black flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-all duration-300 shadow-lg shadow-orange-600/30">
+                          <div className="w-6 h-6 rounded-full bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-all duration-300 shadow-lg shadow-orange-600/30">
                             <Trophy className="h-3.5 w-3.5 text-white" />
                           </div>
-                          <span className="text-gray-300 text-lg leading-relaxed group-hover:text-white group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-orange-200 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                          <span className="text-gray-300 text-lg leading-relaxed group-hover:text-orange-200 transition-all duration-300">
                             {result}
                           </span>
                         </li>
@@ -291,7 +291,7 @@ export default function IndustryLeadership() {
                   
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
                     <div>
-                      <h4 className="text-2xl font-bold mb-2 bg-gradient-to-r from-white to-orange-200 bg-clip-text text-transparent">
+                      <h4 className="text-2xl font-bold mb-2 bg-gradient-to-r from-orange-200 to-orange-400 bg-clip-text text-transparent">
                         Discover Our {activeIndustry.name} Excellence
                       </h4>
                       <p className="text-gray-300 text-lg">
@@ -299,7 +299,7 @@ export default function IndustryLeadership() {
                       </p>
                     </div>
                     
-                    <button className={`inline-flex items-center gap-3 bg-gradient-to-r ${activeIndustry.gradient} hover:from-orange-500 hover:via-orange-600 hover:to-gray-900 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/40 group whitespace-nowrap border border-orange-500/30`}>
+                    <button className={`inline-flex items-center gap-3 bg-gradient-to-r ${activeIndustry.gradient} hover:from-orange-500 hover:via-orange-600 hover:to-orange-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/40 group whitespace-nowrap border border-orange-500/30`}>
                       <span>Explore Solutions</span>
                       <ArrowRight className="h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
                     </button>
