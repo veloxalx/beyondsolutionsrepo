@@ -48,7 +48,7 @@ const PremiumClientLogos = () => {
           {/* Main logos container */}
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/80 to-black/60 backdrop-blur-lg border border-orange-500/20 shadow-2xl shadow-orange-500/10 p-8 md:p-12">
             {/* First row - scrolling animation */}
-            <div className="flex items-center justify-center mb-8 animate-marquee-slow">
+            <div className="flex items-center justify-center mb-8 animate-marquee-fast">
               <div className="flex items-center space-x-12 md:space-x-16">
                 {clientLogos.slice(0, 6).map((client, index) => (
                   <div 
@@ -85,7 +85,7 @@ const PremiumClientLogos = () => {
             </div>
 
             {/* Second row - reverse scrolling */}
-            <div className="flex items-center justify-center animate-marquee-reverse-slow">
+            <div className="flex items-center justify-center animate-marquee-reverse-fast">
               <div className="flex items-center space-x-12 md:space-x-16">
                 {clientLogos.slice(6, 12).map((client, index) => (
                   <div 
@@ -144,28 +144,28 @@ const PremiumClientLogos = () => {
         </div>
       </div>
 
-      {/* Custom CSS for animations */}
+      {/* Custom CSS for faster animations */}
       <style jsx>{`
-        @keyframes marquee-slow {
+        @keyframes marquee-fast {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
         
-        @keyframes marquee-reverse-slow {
+        @keyframes marquee-reverse-fast {
           0% { transform: translateX(-50%); }
           100% { transform: translateX(0); }
         }
         
-        .animate-marquee-slow {
-          animation: marquee-slow 30s linear infinite;
+        .animate-marquee-fast {
+          animation: marquee-fast 12s linear infinite;
         }
         
-        .animate-marquee-reverse-slow {
-          animation: marquee-reverse-slow 30s linear infinite;
+        .animate-marquee-reverse-fast {
+          animation: marquee-reverse-fast 12s linear infinite;
         }
         
-        .animate-marquee-slow:hover,
-        .animate-marquee-reverse-slow:hover {
+        .animate-marquee-fast:hover,
+        .animate-marquee-reverse-fast:hover {
           animation-play-state: paused;
         }
       `}</style>
