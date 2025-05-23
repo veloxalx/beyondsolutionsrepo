@@ -222,7 +222,7 @@ export default function Footer() {
             </div>
             <p className="text-gray-400">
               © {new Date().getFullYear()} Beyond Solutions. 
-              <span className="text-orange-400 font-semibold ml-1">The Premier Business Transformation Partner.</span>
+              <span className="text-orange-400 font-semibold ml-1 p-3">The Premier Business Transformation Partner.</span>
             </p>
           </div>
           

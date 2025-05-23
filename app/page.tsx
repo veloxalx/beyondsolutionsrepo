@@ -24,7 +24,13 @@ const fadeInVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const FadeInSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
+const FadeInSection = ({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) => (
   <motion.div
     variants={fadeInVariants}
     initial="hidden"
@@ -48,8 +54,13 @@ export default function Home() {
       {/* Fixed navbar - renders outside main content flow */}
       <Navbar />
       <WhatsAppContact />
-      
-      <main className={cn("min-h-screen bg-black transition-opacity duration-500", isLoaded ? "opacity-100" : "opacity-0")}>
+
+      <main
+        className={cn(
+          "min-h-screen bg-black transition-opacity duration-500",
+          isLoaded ? "opacity-100" : "opacity-0"
+        )}
+      >
         <FadeInSection>
           <div className="-mt-20 md:-mt-24 lg:-mt-32">
             <Hero />
@@ -59,27 +70,27 @@ export default function Home() {
         <FadeInSection delay={0.2}>
           <PremiumClientLogos />
         </FadeInSection>
-        
+  <FadeInSection delay={0.3}>
+          <SuperiorResults />
+        </FadeInSection>
         <FadeInSection delay={0.1}>
           <AwardsRecognition />
         </FadeInSection>
-                <FadeInSection delay={0.4}>
+        <FadeInSection delay={0.4}>
           <IndustryLeadership />
         </FadeInSection>
-        <FadeInSection delay={0.3}>
-          <SuperiorResults />
-        </FadeInSection>
-
-
-
-        <FadeInSection delay={0.5}>
-          <EliteSolutions />
-        </FadeInSection>
-
-        <FadeInSection delay={0.6}>
+              <FadeInSection delay={0.6}>
           <EliteCaseStudies />
         </FadeInSection>
 
+          <FadeInSection delay={0.5}>
+          <EliteSolutions />
+        </FadeInSection>
+      
+
+      
+
+  
         <FadeInSection delay={0.7}>
           <ExclusiveProcess />
         </FadeInSection>
@@ -89,7 +100,7 @@ export default function Home() {
         </FadeInSection>
 
         <Footer />
-        
+
         {/* Bottom padding to account for fixed navbar */}
         <div className="h-16 md:h-20" />
       </main>
