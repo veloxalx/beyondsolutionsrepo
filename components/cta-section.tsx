@@ -36,7 +36,7 @@ export default function CTASection() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-500/90 hover:to-orange-600/90 text-white font-semibold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full text-base sm:text-lg shadow-lg shadow-orange-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/30 hover:-translate-y-1 border border-orange-500/20 flex items-center justify-center gap-2 group">
-                  <span>Schedule Elite Consultation</span>
+                  <span className="schedule">Schedule Elite Consultation</span>
                   <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
                 

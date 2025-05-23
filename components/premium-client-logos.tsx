@@ -29,7 +29,7 @@ const PremiumClientLogos = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full text-sm font-semibold mb-6 shadow-lg hover:shadow-orange-500/25 transition-all duration-300">
             <span className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse"></span>
-            Trusted Partnership
+            Who Are We?
           </div>
           <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-orange-200 bg-clip-text text-transparent tracking-tight">
             Trusted by Industry Leaders
