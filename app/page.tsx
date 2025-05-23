@@ -63,14 +63,14 @@ export default function Home() {
         <FadeInSection delay={0.1}>
           <AwardsRecognition />
         </FadeInSection>
-        
+                <FadeInSection delay={0.4}>
+          <IndustryLeadership />
+        </FadeInSection>
         <FadeInSection delay={0.3}>
           <SuperiorResults />
         </FadeInSection>
 
-        <FadeInSection delay={0.4}>
-          <IndustryLeadership />
-        </FadeInSection>
+
 
         <FadeInSection delay={0.5}>
           <EliteSolutions />
