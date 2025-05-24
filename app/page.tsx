@@ -70,7 +70,7 @@ export default function Home() {
         <FadeInSection delay={0.2}>
           <PremiumClientLogos />
         </FadeInSection>
-  <FadeInSection delay={0.3}>
+        <FadeInSection delay={0.3}>
           <SuperiorResults />
         </FadeInSection>
         <FadeInSection delay={0.1}>
@@ -79,18 +79,14 @@ export default function Home() {
         <FadeInSection delay={0.4}>
           <IndustryLeadership />
         </FadeInSection>
-              <FadeInSection delay={0.6}>
+        <FadeInSection delay={0.6}>
           <EliteCaseStudies />
         </FadeInSection>
 
-          <FadeInSection delay={0.5}>
+        <FadeInSection delay={0.5}>
           <EliteSolutions />
         </FadeInSection>
-      
 
-      
-
-  
         <FadeInSection delay={0.7}>
           <ExclusiveProcess />
         </FadeInSection>
