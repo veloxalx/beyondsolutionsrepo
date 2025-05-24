@@ -6,51 +6,51 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Floating Bottom Navbar */}
-      <nav className="fixed bottom-3 left-3 right-3 z-50 md:bottom-6 md:left-6 md:right-6">
-        <div className="bg-gradient-to-r from-black via-gray-900 to-black backdrop-blur-xl border border-orange-500/20 rounded-xl md:rounded-2xl shadow-2xl shadow-black/50">
-          <div className="px-3 md:px-8">
+      {/* Floating Bottom Navbar - Centered */}
+      <nav className="fixed bottom-3 left-1/2 transform -translate-x-1/2 z-50 md:bottom-6">
+        <div className="bg-gradient-to-r from-black via-gray-900 to-black backdrop-blur-xl border border-orange-500/20 rounded-xl md:rounded-2xl shadow-2xl shadow-black/50 w-fit">
+          <div className="px-4 md:px-8">
             <div className="flex items-center justify-between h-14 md:h-18">
               {/* Logo */}
-              <div className="flex items-center">
-                <div className="text-white font-bold text-lg md:text-xl bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+              <div className="flex items-center mr-4 md:mr-6">
+                <div className="text-white font-bold text-lg md:text-xl bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent whitespace-nowrap">
                   Beyond Solutions
                 </div>
               </div>
 
               {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center gap-6">
+              <div className="hidden md:flex items-center gap-4 lg:gap-6">
                 <a
                   href="/"
-                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm"
+                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
                   Home
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a
                   href="/about"
-                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm"
+                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
                   About
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a
                   href="/what-we-do"
-                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm"
+                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
                   What we do
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a
                   href="/gallery"
-                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm"
+                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
                   Gallery
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a
                   href="/contact"
-                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm"
+                  className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
                   Contact
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
@@ -58,15 +58,15 @@ export default function Navbar() {
               </div>
 
               {/* Get in Touch Button */}
-              <div className="hidden md:block">
-                <button className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-400 hover:via-orange-500 hover:to-orange-600 text-white rounded-full px-6 py-2 font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-105 border border-orange-400/30 text-sm">
+              <div className="hidden md:block ml-4 lg:ml-6">
+                <button className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-400 hover:via-orange-500 hover:to-orange-600 text-white rounded-full px-4 lg:px-6 py-2 font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-105 border border-orange-400/30 text-sm whitespace-nowrap">
                   Get in Touch
                 </button>
               </div>
 
               {/* Mobile menu button */}
               <button
-                className="md:hidden relative p-2 rounded-lg transition-all duration-300 hover:scale-110 active:scale-95"
+                className="md:hidden relative p-2 rounded-lg transition-all duration-300 hover:scale-110 active:scale-95 ml-4"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle menu"
               >
