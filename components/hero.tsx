@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight,
   Target,
@@ -15,209 +15,357 @@ import {
 
 const Hero = () => {
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [progressWidth, setProgressWidth] = useState(0);
+  const heroRef = useRef(null);
+  const intervalRef = useRef(null);
 
   const services = [
     {
       id: 1,
       title: "Strategic Consulting",
       subtitle: "Future-Ready Business Strategy",
-      description: "Transform your business strategy with data-driven insights and proven methodologies that deliver measurable results.",
+      description: "Transform your business strategy with data-driven insights and proven methodologies that deliver measurable results across all organizational levels.",
       icon: Target,
       primaryColor: "from-orange-500 to-orange-400",
+      secondaryColor: "from-orange-500/20 to-orange-400/10",
       stats: "500+ Strategies",
       metric: "85% Success Rate",
       features: ["Market Analysis", "Strategic Roadmaps", "Implementation"],
+      bgPattern: "radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%)",
     },
     {
       id: 2,
       title: "Digital Transformation",
-      subtitle: "Next-Gen Technology Solutions",
-      description: "Modernize operations with cutting-edge technology solutions and automation that drives efficiency across your organization.",
+      subtitle: "Next-Gen Technology Solutions",  
+      description: "Modernize operations with cutting-edge technology solutions and automation that drives efficiency across your entire organization ecosystem.",
       icon: Zap,
       primaryColor: "from-orange-600 to-orange-400",
+      secondaryColor: "from-orange-600/20 to-orange-400/10",
       stats: "98% Success Rate",
       metric: "60% Efficiency Gain",
       features: ["Cloud Migration", "Automation", "Integration"],
+      bgPattern: "radial-gradient(circle at 80% 20%, rgba(234, 88, 12, 0.1) 0%, transparent 50%)",
     },
     {
       id: 3,
       title: "Performance Optimization",
       subtitle: "Maximize ROI & Efficiency",
-      description: "Maximize efficiency and ROI through systematic improvements and optimization strategies that deliver tangible results.",
+      description: "Maximize efficiency and ROI through systematic improvements and optimization strategies that deliver tangible, measurable business results.",
       icon: TrendingUp,
       primaryColor: "from-orange-500 to-orange-300",
+      secondaryColor: "from-orange-500/20 to-orange-300/10",
       stats: "40% ROI Increase",
       metric: "200+ Projects",
       features: ["Process Improvement", "Analytics", "Cost Optimization"],
+      bgPattern: "radial-gradient(circle at 50% 50%, rgba(251, 146, 60, 0.1) 0%, transparent 50%)",
     },
   ];
 
-  // Auto-rotate services
+  // Enhanced auto-rotation with progress tracking
   useEffect(() => {
-    const interval = setInterval(() => {
+    if (!isAutoPlaying) return;
+
+    const startProgress = () => {
+      setProgressWidth(0);
+      let width = 0;
+      const progressInterval = setInterval(() => {
+        width += 100 / 300; // 3 seconds = 300 * 10ms
+        setProgressWidth(width);
+        if (width >= 100) {
+          clearInterval(progressInterval);
+        }
+      }, 10);
+      return progressInterval;
+    };
+
+    const progressInterval = startProgress();
+
+    intervalRef.current = setInterval(() => {
       setCurrentServiceIndex((prev) => (prev + 1) % services.length);
+      startProgress();
     }, 3000);
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(intervalRef.current);
+      clearInterval(progressInterval);
+    };
+  }, [isAutoPlaying]);
+
+  // Intersection observer for entrance animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Mouse tracking for interactive effects
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const rect = heroRef.current?.getBoundingClientRect();
+      if (rect) {
+        setMousePosition({
+          x: ((e.clientX - rect.left) / rect.width) * 100,
+          y: ((e.clientY - rect.top) / rect.height) * 100,
+        });
+      }
+    };
+
+    const heroElement = heroRef.current;
+    if (heroElement) {
+      heroElement.addEventListener('mousemove', handleMouseMove);
+      return () => heroElement.removeEventListener('mousemove', handleMouseMove);
+    }
   }, []);
 
   const currentService = services[currentServiceIndex];
   const IconComponent = currentService.icon;
 
+  const handleServiceChange = (index) => {
+    setCurrentServiceIndex(index);
+    setIsAutoPlaying(false);
+    setProgressWidth(0);
+    setTimeout(() => setIsAutoPlaying(true), 1000);
+  };
+
   return (
-    <section className="relative w-full min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
-      {/* Background elements */}
+    <section 
+      ref={heroRef}
+      className="relative w-full min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black"
+    >
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-orange-500/15 via-transparent to-transparent"></div>
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-orange-500/30 to-orange-600/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/5 w-64 h-64 bg-gradient-to-br from-orange-400/20 to-orange-500/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        {/* Dynamic gradient overlay */}
+        <div 
+          className="absolute inset-0 opacity-30 transition-all duration-1000"
+          style={{
+            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(249, 115, 22, 0.15) 0%, transparent 50%)`,
+          }}
+        />
         
-        {/* Floating particles */}
-        {[...Array(8)].map((_, i) => (
+        {/* Main gradient backgrounds */}
+        <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-orange-500/15 via-transparent to-transparent" />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-orange-500/30 to-orange-600/20 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/3 left-1/5 w-64 h-64 bg-gradient-to-br from-orange-400/20 to-orange-500/15 rounded-full blur-2xl animate-pulse-slow" style={{animationDelay: '2s'}} />
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-br from-orange-300/10 to-orange-600/5 rounded-full blur-3xl animate-pulse-slow transform -translate-x-1/2 -translate-y-1/2" style={{animationDelay: '4s'}} />
+        
+        {/* Enhanced floating particles */}
+        {[...Array(12)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-orange-400/30 rounded-full animate-bounce"
+            className="absolute animate-float opacity-60"
             style={{
               left: `${20 + Math.random() * 60}%`,
               top: `${20 + Math.random() * 60}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 3}s`,
             }}
-          />
+          >
+            <div className="w-2 h-2 bg-orange-400/40 rounded-full blur-sm animate-pulse" />
+          </div>
         ))}
+
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 opacity-5">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="heroGrid" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#f97316" strokeWidth="1" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#heroGrid)" />
+          </svg>
+        </div>
       </div>
 
       <div className="container px-4 mx-auto relative z-10">
-        <div className="text-center max-w-5xl mx-auto mb-12">
-          <div className="space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-black/90 to-gray-900/80 backdrop-blur-xl border border-orange-500/30 shadow-xl">
-              <Crown className="w-4 h-4 text-orange-400 animate-spin" style={{animationDuration: '10s'}} />
-              <span className="text-orange-300 text-sm font-semibold tracking-wider">
+        {/* Enhanced Header Section */}
+        <div className="text-center max-w-5xl mx-auto mb-16">
+          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+            {/* Premium Badge */}
+            <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-black/90 via-gray-900/90 to-black/90 backdrop-blur-xl border border-orange-500/40 shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 group">
+              <Crown className="w-5 h-5 text-orange-400 group-hover:animate-bounce" />
+              <span className="text-orange-300 text-sm font-bold tracking-wider">
                 ELITE BUSINESS TRANSFORMATION
               </span>
+              <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" />
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-              <span className="block mb-4 text-white">
+            {/* Main Headline */}
+            <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
+              <span className="block mb-6 text-white animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                 Transforming Businesses with
               </span>
-              <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-300 bg-clip-text text-transparent animate-gradient-shift animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                 Elite Strategic Solutions
               </span>
             </h1>
 
-            <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto font-light">
+            {/* Subtitle */}
+            <p className={`text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto font-light transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{transitionDelay: '0.6s'}}>
               We deliver unmatched strategic consulting that drives exceptional 
-              business results for organizations seeking unprecedented growth.
+              business results for organizations seeking unprecedented growth and market leadership.
             </p>
+
+            {/* Trust Indicators */}
+            <div className={`flex justify-center items-center gap-8 text-sm text-gray-400 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{transitionDelay: '0.8s'}}>
+              <span className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+                Fortune 500 Trusted
+              </span>
+              <span className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}} />
+                Global Presence
+              </span>
+              <span className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '1s'}} />
+                24/7 Support
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Service Card */}
+        {/* Enhanced Service Card */}
         <div className="flex justify-center mb-16">
-          <div className="relative w-full max-w-4xl">
-            <div 
-              key={currentService.id}
-              className="relative transform transition-all duration-500 ease-in-out"
-            >
-              <div className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-br from-gray-900/95 to-black/90 backdrop-blur-2xl border-2 border-orange-500/30 shadow-2xl hover:shadow-orange-500/20 transition-all duration-500">
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-400/5 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Header */}
-                <div className="flex flex-col lg:flex-row items-center gap-8 mb-8">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${currentService.primaryColor} flex items-center justify-center shadow-2xl relative overflow-hidden transition-transform duration-300 hover:scale-110`}>
-                    <IconComponent className="w-10 h-10 text-white relative z-10" />
-                    <div className="absolute inset-0 bg-white/20 rounded-2xl animate-pulse"></div>
+          <div className={`relative w-full max-w-5xl transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{transitionDelay: '1s'}}>
+            <div className="relative">
+              {/* Service Card */}
+              <div 
+                key={currentService.id}
+                className="relative transform transition-all duration-700 ease-out animate-slide-in"
+              >
+                <div className="relative p-10 md:p-14 rounded-3xl bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-black/95 backdrop-blur-2xl border-2 border-orange-500/40 shadow-2xl hover:shadow-orange-500/30 transition-all duration-700 group overflow-hidden">
+                  {/* Dynamic background pattern */}
+                  <div 
+                    className="absolute inset-0 opacity-20 transition-opacity duration-1000"
+                    style={{ background: currentService.bgPattern }}
+                  />
+                  
+                  {/* Animated glow effect */}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${currentService.secondaryColor} rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700`} />
+                  
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  
+                  {/* Header Section */}
+                  <div className="flex flex-col lg:flex-row items-center gap-10 mb-10 relative z-10">
+                    <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${currentService.primaryColor} flex items-center justify-center shadow-2xl relative overflow-hidden transition-all duration-500 hover:scale-110 hover:rotate-6 group`}>
+                      <IconComponent className="w-12 h-12 text-white relative z-10 transition-transform duration-300 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-white/20 rounded-3xl animate-pulse" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl" />
+                    </div>
+                    
+                    <div className="text-center lg:text-left flex-1">
+                      <p className={`text-sm font-bold tracking-wider bg-gradient-to-r ${currentService.primaryColor} bg-clip-text text-transparent mb-3 flex items-center justify-center lg:justify-start gap-2 animate-fade-in`}>
+                        <Sparkles className="w-4 h-4 text-orange-400 animate-spin-slow" />
+                        {currentService.subtitle}
+                      </p>
+                      <h3 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+                        {currentService.title}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="text-center lg:text-left">
-                    <p className={`text-sm font-bold tracking-wider bg-gradient-to-r ${currentService.primaryColor} bg-clip-text text-transparent mb-2 flex items-center justify-center lg:justify-start gap-2`}>
-                      <Sparkles className="w-4 h-4 text-orange-400" />
-                      {currentService.subtitle}
-                    </p>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-                      {currentService.title}
-                    </h3>
-                  </div>
-                </div>
 
-                {/* Description */}
-                <p className="text-lg text-gray-300 leading-relaxed mb-8 max-w-3xl">
-                  {currentService.description}
-                </p>
+                  {/* Description */}
+                  <p className="text-xl text-gray-300 leading-relaxed mb-10 max-w-4xl relative z-10 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                    {currentService.description}
+                  </p>
 
-                {/* Features */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                  {currentService.features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-3 p-4 rounded-xl bg-black/60 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300 hover:bg-black/80"
-                    >
-                      <div className={`w-6 h-6 rounded-lg bg-gradient-to-r ${currentService.primaryColor} flex items-center justify-center shadow-lg`}>
-                        <ChevronRight className="w-3 h-3 text-white" />
+                  {/* Enhanced Features Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 relative z-10">
+                    {currentService.features.map((feature, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-4 p-5 rounded-2xl bg-black/70 border border-orange-500/40 hover:border-orange-400/60 transition-all duration-500 hover:bg-black/90 hover:transform hover:scale-105 group animate-slide-in-up"
+                        style={{animationDelay: `${0.3 + index * 0.1}s`}}
+                      >
+                        <div className={`w-8 h-8 rounded-xl bg-gradient-to-r ${currentService.primaryColor} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          <ChevronRight className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-gray-300 font-medium group-hover:text-white transition-colors duration-300">{feature}</span>
                       </div>
-                      <span className="text-sm text-gray-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Stats */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className={`flex items-center gap-4 px-6 py-4 rounded-2xl bg-gradient-to-r ${currentService.primaryColor} shadow-xl w-full sm:w-auto hover:scale-105 transition-transform duration-300`}>
-                    <Award className="w-6 h-6 text-white" />
-                    <div>
-                      <p className="text-white font-bold">{currentService.stats}</p>
-                      <p className="text-white/90 text-sm">Proven Excellence</p>
-                    </div>
+                    ))}
                   </div>
-                  <div className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-black/80 border-2 border-orange-500/40 w-full sm:w-auto hover:scale-105 transition-transform duration-300">
-                    <TrendingUp className="w-6 h-6 text-orange-400" />
-                    <div>
-                      <p className="text-white font-bold">{currentService.metric}</p>
-                      <p className="text-gray-400 text-sm">Performance Impact</p>
+
+                  {/* Enhanced Stats Section */}
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-6 relative z-10">
+                    <div className={`flex items-center gap-5 px-8 py-5 rounded-2xl bg-gradient-to-r ${currentService.primaryColor} shadow-xl w-full sm:w-auto hover:scale-105 transition-all duration-500 group animate-slide-in-left`} style={{animationDelay: '0.6s'}}>
+                      <Award className="w-7 h-7 text-white group-hover:animate-bounce" />
+                      <div>
+                        <p className="text-white font-black text-lg">{currentService.stats}</p>
+                        <p className="text-white/90 text-sm font-medium">Proven Excellence</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-5 px-8 py-5 rounded-2xl bg-black/80 border-2 border-orange-500/50 w-full sm:w-auto hover:scale-105 transition-all duration-500 hover:border-orange-400/70 group animate-slide-in-right" style={{animationDelay: '0.7s'}}>
+                      <TrendingUp className="w-7 h-7 text-orange-400 group-hover:animate-bounce" />
+                      <div>
+                        <p className="text-white font-black text-lg">{currentService.metric}</p>
+                        <p className="text-gray-400 text-sm font-medium">Performance Impact</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Navigation */}
-            <div className="flex justify-center mt-8 gap-4">
-              {services.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentServiceIndex(index)}
-                  className={`transition-all duration-300 hover:scale-110 ${
-                    index === currentServiceIndex
-                      ? "w-12 h-4 bg-gradient-to-r from-orange-500 to-orange-400 rounded-full shadow-lg"
-                      : "w-4 h-4 bg-orange-500/40 rounded-full hover:bg-orange-400/60"
-                  }`}
-                />
-              ))}
-            </div>
+              {/* Enhanced Navigation */}
+              <div className="flex justify-center mt-10 gap-6">
+                {services.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleServiceChange(index)}
+                    className={`transition-all duration-500 hover:scale-125 relative group ${
+                      index === currentServiceIndex
+                        ? "w-16 h-5 bg-gradient-to-r from-orange-500 to-orange-400 rounded-full shadow-lg shadow-orange-500/50"
+                        : "w-5 h-5 bg-orange-500/50 rounded-full hover:bg-orange-400/70"
+                    }`}
+                  >
+                    {index === currentServiceIndex && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-500 rounded-full animate-pulse" />
+                    )}
+                  </button>
+                ))}
+              </div>
 
-            {/* Progress Bar */}
-            <div className="mt-6 w-full bg-gray-800/60 rounded-full h-2 overflow-hidden backdrop-blur-sm border border-orange-500/20">
-              <div
-                className={`h-full bg-gradient-to-r ${currentService.primaryColor} rounded-full shadow-lg transition-all duration-300 animate-progress`}
-                style={{animation: 'progress 3s linear infinite'}}
-              >
+              {/* Enhanced Progress Bar */}
+              <div className="mt-8 w-full bg-gray-800/60 rounded-full h-3 overflow-hidden backdrop-blur-sm border border-orange-500/30 shadow-inner">
+                <div
+                  className={`h-full bg-gradient-to-r ${currentService.primaryColor} rounded-full shadow-lg transition-all duration-100 relative overflow-hidden`}
+                  style={{ width: `${progressWidth}%` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/40 to-white/20 animate-shimmer" />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <button className="bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-bold px-12 py-6 rounded-full text-lg shadow-2xl border-2 border-orange-400/30 group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:-translate-y-1">
-            <div className="absolute inset-0 bg-white/10 rounded-full translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-            <span className="relative flex items-center justify-center gap-3">
+        {/* Enhanced CTA Buttons */}
+        <div className={`flex flex-col sm:flex-row justify-center gap-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{transitionDelay: '1.5s'}}>
+          <button className="bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-black px-14 py-7 rounded-full text-xl shadow-2xl border-2 border-orange-400/40 group relative overflow-hidden transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-orange-500/50">
+            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <span className="relative flex items-center justify-center gap-4">
               Schedule Elite Consultation
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              <ArrowRight className="h-6 w-6 group-hover:translate-x-3 transition-transform duration-300" />
             </span>
           </button>
 
-          <button className="px-12 py-6 rounded-full border-2 border-orange-500/50 text-orange-300 hover:bg-orange-500/20 backdrop-blur-md font-bold transition-all duration-500 bg-black/40 hover:scale-105 hover:-translate-y-1 hover:border-orange-400/70 hover:text-orange-200">
-            View Success Stories
+          <button className="px-14 py-7 rounded-full border-2 border-orange-500/60 text-orange-300 hover:bg-orange-500/20 backdrop-blur-md font-black transition-all duration-500 bg-black/50 hover:scale-110 hover:-translate-y-2 hover:border-orange-400/80 hover:text-orange-200 hover:shadow-2xl hover:shadow-orange-500/30 relative overflow-hidden group text-xl">
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <span className="relative">View Success Stories</span>
           </button>
         </div>
       </div>
@@ -228,17 +376,100 @@ const Hero = () => {
           to { opacity: 1; transform: translateY(0); }
         }
         
-        @keyframes progress {
-          0% { width: 0%; }
-          100% { width: 100%; }
+        @keyframes fade-in-up {
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slide-in {
+          from { opacity: 0; transform: translateX(-30px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slide-in-up {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slide-in-left {
+          from { opacity: 0; transform: translateX(-40px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slide-in-right {
+          from { opacity: 0; transform: translateX(40px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes gradient-shift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.6; transform: scale(1.05); }
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33% { transform: translateY(-10px) rotate(5deg); }
+          66% { transform: translateY(5px) rotate(-3deg); }
+        }
+        
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
         
         .animate-fade-in {
           animation: fade-in 0.8s ease-out forwards;
         }
         
-        .animate-progress {
-          animation: progress 3s linear infinite;
+        .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out forwards;
+        }
+        
+        .animate-slide-in {
+          animation: slide-in 0.8s ease-out forwards;
+        }
+        
+        .animate-slide-in-up {
+          animation: slide-in-up 0.6s ease-out forwards;
+        }
+        
+        .animate-slide-in-left {
+          animation: slide-in-left 0.6s ease-out forwards;
+        }
+        
+        .animate-slide-in-right {
+          animation: slide-in-right 0.6s ease-out forwards;
+        }
+        
+        .animate-gradient-shift {
+          background-size: 200% 200%;
+          animation: gradient-shift 4s ease infinite;
+        }
+        
+        .animate-pulse-slow {
+          animation: pulse-slow 4s ease-in-out infinite;
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-shimmer {
+          animation: shimmer 2s ease-in-out infinite;
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 10s linear infinite;
         }
       `}</style>
     </section>
