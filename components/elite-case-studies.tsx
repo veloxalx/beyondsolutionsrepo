@@ -8,78 +8,127 @@ import Image from "next/image"
 
 const caseStudies = [
   {
-    id: "techvision",
-    title: "TechVision's Digital Transformation",
-    company: "TechVision Inc.",
-    industry: "SaaS",
+    id: "prime-group-awards",
+    title: "Prime Group Awards Ceremony 2018",
+    company: "Prime Group",
+    industry: "Corporate Events",
     challenge:
-      "TechVision was struggling with declining market share and outdated digital infrastructure. They needed a comprehensive strategy to revitalize their brand and modernize their operations.",
+      "Prime Group needed a prestigious awards ceremony that would celebrate their achievements while reinforcing their brand excellence and corporate values to stakeholders and employees.",
     solution:
-      "We implemented our exclusive digital transformation strategy, modernizing their technology stack, optimizing their customer journey, and implementing data-driven marketing strategies.",
+      "We designed and executed a comprehensive awards ceremony featuring premium venue management, elegant staging, sophisticated lighting design, and seamless event coordination.",
     results: [
-      "200% increase in qualified leads",
-      "35% boost in conversion rates",
-      "65% improvement in customer retention",
-      "3x return on marketing investment",
+      "500+ attendees including industry leaders",
+      "95% positive feedback from participants",
+      "Enhanced brand prestige and recognition",
+      "Successful celebration of company milestones",
     ],
-    image: "/case-studies/techvision.jpg",
-    logo: "/logos/techvision.svg",
+    image: "/images/case-studies/prime.jpg",
+    logo: "/images/logos/primegroup.png",
     testimonial: {
       quote:
-        "Beyond Solutions delivered results that far exceeded our expectations. Their strategic approach and execution expertise transformed our business and positioned us for long-term success.",
-      author: "Sarah Johnson",
-      title: "CEO, TechVision Inc.",
+        "Beyond Solutions delivered an exceptional awards ceremony that perfectly captured our company's achievements and values. The attention to detail and professional execution exceeded our expectations.",
+      author: "Rajesh Perera",
+      title: "Managing Director, Prime Group",
     },
   },
   {
-    id: "global-manufacturing",
-    title: "Global Manufacturing's Operational Excellence",
-    company: "Global Manufacturing Corp.",
-    industry: "Manufacturing",
+    id: "sathosa-idam-nidhanaya",
+    title: "Sathosa Idam Nidhanaya - Season 3",
+    company: "Sathosa",
+    industry: "Retail & Entertainment",
     challenge:
-      "Rising costs, inefficient processes, and quality inconsistencies were eroding Global Manufacturing's profit margins and competitive position.",
+      "Sathosa required a captivating television production for Season 3 of their popular program, needing creative content that would engage audiences while promoting their brand values.",
     solution:
-      "Our elite operational excellence program identified key inefficiencies, implemented lean manufacturing principles, and created a continuous improvement culture.",
+      "We provided comprehensive television production services including concept development, scriptwriting, filming, post-production, and broadcast coordination for the entire season.",
     results: [
-      "40% reduction in operational costs",
-      "65% improvement in process efficiency",
-      "30% faster delivery times",
-      "25% increase in employee productivity",
+      "Successfully completed full season production",
+      "High viewer engagement and ratings",
+      "Enhanced brand visibility for Sathosa",
+      "Seamless broadcast delivery on schedule",
     ],
-    image: "/case-studies/manufacturing.jpg",
-    logo: "/logos/global-manufacturing.svg",
+    image: "/images/case-studies/sathosa.jpg",
+    logo: "/images/logos/sathosa.png",
     testimonial: {
       quote:
-        "The operational excellence program from Beyond Solutions has been transformative. Their expertise and methodologies helped us achieve results we didn't think were possible.",
-      author: "Michael Chen",
-      title: "COO, Global Manufacturing Corp.",
+        "The production quality and creative excellence delivered by Beyond Solutions for Season 3 was outstanding. They brought our vision to life with professionalism and creativity.",
+      author: "Samantha Silva",
+      title: "Marketing Manager, Sathosa",
     },
   },
   {
-    id: "nexus-financial",
-    title: "Nexus Financial's Market Expansion",
-    company: "Nexus Financial",
-    industry: "Financial Services",
+    id: "stax-masquerade-dance",
+    title: "Stax Masquerade Dance",
+    company: "Stax Entertainment",
+    industry: "Entertainment & Events",
     challenge:
-      "Nexus Financial had saturated their current market and needed a strategic approach to identify and enter new markets while managing risk.",
+      "Stax Entertainment wanted to create an unforgettable masquerade dance event that would set new standards for luxury entertainment experiences in the market.",
     solution:
-      "We developed our premium market expansion strategy, identifying optimal new markets, creating tailored entry plans, and building strategic partnerships.",
+      "We orchestrated a premium masquerade dance event featuring elaborate decorations, professional choreography, luxury catering, and immersive entertainment experiences.",
     results: [
-      "Successfully entered 5 new markets",
-      "50% faster market penetration than industry average",
-      "35% higher ROI on expansion investments",
-      "120% overall business growth in 18 months",
+      "300+ guests in attendance",
+      "Sold-out event with waiting list",
+      "100% client satisfaction rating",
+      "Established new benchmark for luxury events",
     ],
-    image: "/case-studies/financial.jpg",
-    logo: "/logos/nexus-financial.svg",
+    image: "/images/case-studies/stax.jpg",
+    logo: "/images/logos/stax.png",
     testimonial: {
       quote:
-        "Beyond Solutions' market expansion expertise was instrumental in our growth. Their strategic insights and execution support helped us enter new markets with confidence and achieve exceptional results.",
-      author: "Emma Rodriguez",
-      title: "CEO, Nexus Financial",
+        "Beyond Solutions transformed our masquerade vision into reality. The event was magical, and every detail was executed to perfection. Our guests are still talking about it!",
+      author: "David Fernando",
+      title: "Event Director, Stax Entertainment",
     },
   },
-]
+  {
+    id: "designer-stalls",
+    title: "Designer Stalls Exhibition",
+    company: "Various Designers",
+    industry: "Fashion & Design",
+    challenge:
+      "Multiple fashion designers needed an elegant platform to showcase their collections, requiring sophisticated stall designs that would enhance their brand presentation and attract customers.",
+    solution:
+      "We created bespoke designer stalls with premium materials, strategic lighting, and optimized layouts that highlighted each designer's unique aesthetic while maintaining cohesive exhibition flow.",
+    results: [
+      "50+ designers successfully showcased",
+      "40% increase in sales compared to previous exhibitions",
+      "Enhanced designer brand visibility",
+      "Positive feedback from both designers and visitors",
+    ],
+    image: "/images/case-studies/stalls/stall1.png",
+    logo: "/images/logos/designer-collective.png",
+    testimonial: {
+      quote:
+        "The designer stalls created by Beyond Solutions perfectly captured the essence of our brand. The quality and attention to detail helped us stand out and connect with our target audience.",
+      author: "Priya Wickramasinghe",
+      title: "Fashion Designer",
+    },
+  },
+  {
+    id: "premium-ceremonies",
+    title: "Premium Corporate Ceremonies",
+    company: "Multiple Corporate Clients",
+    industry: "Corporate Events",
+    challenge:
+      "Various corporations needed sophisticated ceremony planning for milestone celebrations, product launches, and corporate gatherings that would reflect their brand excellence.",
+    solution:
+      "We delivered comprehensive ceremony planning services including venue selection, décor design, catering coordination, entertainment booking, and complete event management.",
+    results: [
+      "25+ successful ceremonies executed",
+      "98% client retention rate",
+      "Zero incidents or delays",
+      "Consistent 5-star client feedback",
+    ],
+    image: "/images/case-studies/stalls/stall2.png",
+    logo: "/images/logos/beyond-solutions.png",
+    testimonial: {
+      quote:
+        "Beyond Solutions has been our trusted partner for all major corporate ceremonies. Their professionalism, creativity, and flawless execution make every event memorable and impactful.",
+      author: "Nirosh Gunasekara",
+      title: "Corporate Relations Manager",
+    },
+  },
+
+];
 
 export default function EliteCaseStudies() {
   const [activeCaseStudy, setActiveCaseStudy] = useState(caseStudies[0])

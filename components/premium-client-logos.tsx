@@ -1,53 +1,48 @@
 const PremiumClientLogos = () => {
-  // Premium company logos data
+  // Premium company logos data with max dimensions to maintain aspect ratio
   const clientLogos = [
-    { name: "Microsoft", width: "140", height: "32" },
-    { name: "Google", width: "120", height: "40" },
-    { name: "Amazon", width: "130", height: "38" },
-    { name: "Apple", width: "36", height: "44" },
-    { name: "Tesla", width: "120", height: "24" },
-    { name: "Netflix", width: "110", height: "30" },
-    { name: "Spotify", width: "120", height: "36" },
-    { name: "Airbnb", width: "120", height: "36" },
-    { name: "Uber", width: "90", height: "36" },
-    { name: "Adobe", width: "100", height: "36" },
-    { name: "Salesforce", width: "140", height: "28" },
-    { name: "Oracle", width: "120", height: "24" }
+    { name: "Sri Lanka Telecom Mobile", maxWidth: "140", imageUrl: "/images/logos/sltm.png" },
+    { name: "Seylan Bank", maxWidth: "120", imageUrl: "/images/logos/seylan.png" },
+    { name: "Bank of Ceylon", maxWidth: "130", imageUrl: "/images/logos/boc.png" },
+    { name: "LOLC", maxWidth: "120", imageUrl: "/images/logos/LOLC.jpg" },
+    { name: "NSB", maxWidth: "120", imageUrl: "/images/logos/nsb.png" },
+    { name: "ComBank", maxWidth: "110", imageUrl: "/images/logos/combanl.png" },
+    { name: "Commercial Credit", maxWidth: "120", imageUrl: "/images/logos/commericalcredit.png" },
+    { name: "Acres", maxWidth: "140", imageUrl: "/images/logos/acres.jpg" },
+    { name: "Grill n Chill", maxWidth: "120", imageUrl: "/images/logos/grillnchill.png" },
+    { name: "Lyceum", maxWidth: "130", imageUrl: "/images/logos/lyceum.webp" },
+    { name: "Mercedes", maxWidth: "120", imageUrl: "/images/logos/merc.jpg" },
+    { name: "Prime Group", maxWidth: "110", imageUrl: "/images/logos/primegroup.png" },
+    { name: "SLIC", maxWidth: "120", imageUrl: "/images/logos/slic.png" },
+    { name: "Sri Pala", maxWidth: "140", imageUrl: "/images/logos/sripala.png" },
+    { name: "Train", maxWidth: "120", imageUrl: "/images/logos/train.png" },
   ];
 
   return (
     <section className="w-full py-24 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
-      {/* Dynamic background pattern */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-transparent to-orange-600/10"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-1 bg-gradient-to-r from-transparent via-orange-500/30 to-transparent"></div>
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_orange_0%,_transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,_orange_0%,_transparent_50%)]"></div>
       </div>
       
       <div className="container px-4 md:px-6 mx-auto relative z-10">
+        {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full text-sm font-semibold mb-6 shadow-lg hover:shadow-orange-500/25 transition-all duration-300">
-            <span className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse"></span>
-            Who Are We?
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-gray-100 to-orange-200 bg-clip-text text-transparent tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            We partner with the world's most innovative and respected organizations to deliver exceptional results
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Join thousands of companies that trust our solutions
           </p>
         </div>
 
-        {/* Premium client logos grid */}
         <div className="relative">
-          {/* Gradient overlays for fade effect */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black via-black/90 to-transparent z-10"></div>
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black via-black/90 to-transparent z-10"></div>
           
-          {/* Main logos container */}
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/80 to-black/60 backdrop-blur-lg border border-orange-500/20 shadow-2xl shadow-orange-500/10 p-8 md:p-12">
-            {/* First row - scrolling animation */}
+            {/* First row */}
             <div className="flex items-center justify-center mb-8 animate-marquee-fast">
               <div className="flex items-center space-x-12 md:space-x-16">
                 {clientLogos.slice(0, 6).map((client, index) => (
@@ -56,12 +51,14 @@ const PremiumClientLogos = () => {
                     className="flex-shrink-0 group cursor-pointer transition-all duration-300 hover:scale-110"
                   >
                     <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 shadow-xl border border-gray-700 group-hover:border-orange-500/50 group-hover:shadow-2xl group-hover:shadow-orange-500/20 transition-all duration-300 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800">
-                      <img
-                        src={`/api/placeholder/${client.width}/${client.height}`}
-                        alt={`${client.name} logo`}
-                        className="opacity-70 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125"
-                        style={{ width: client.width + 'px', height: client.height + 'px' }}
-                      />
+                      <div className="flex items-center justify-center h-12">
+                        <img
+                          src={client.imageUrl}
+                          alt={`${client.name} logo`}
+                          className="opacity-70 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125 max-h-full object-contain"
+                          style={{ maxWidth: client.maxWidth + 'px' }}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -72,19 +69,21 @@ const PremiumClientLogos = () => {
                     className="flex-shrink-0 group cursor-pointer transition-all duration-300 hover:scale-110"
                   >
                     <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 shadow-xl border border-gray-700 group-hover:border-orange-500/50 group-hover:shadow-2xl group-hover:shadow-orange-500/20 transition-all duration-300 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800">
-                      <img
-                        src={`/api/placeholder/${client.width}/${client.height}`}
-                        alt={`${client.name} logo`}
-                        className="opacity-70 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125"
-                        style={{ width: client.width + 'px', height: client.height + 'px' }}
-                      />
+                      <div className="flex items-center justify-center h-12">
+                        <img
+                          src={client.imageUrl}
+                          alt={`${client.name} logo`}
+                          className="opacity-70 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125 max-h-full object-contain"
+                          style={{ maxWidth: client.maxWidth + 'px' }}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Second row - reverse scrolling */}
+            {/* Second row */}
             <div className="flex items-center justify-center animate-marquee-reverse-fast">
               <div className="flex items-center space-x-12 md:space-x-16">
                 {clientLogos.slice(6, 12).map((client, index) => (
@@ -93,12 +92,14 @@ const PremiumClientLogos = () => {
                     className="flex-shrink-0 group cursor-pointer transition-all duration-300 hover:scale-110"
                   >
                     <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 shadow-xl border border-gray-700 group-hover:border-orange-500/50 group-hover:shadow-2xl group-hover:shadow-orange-500/20 transition-all duration-300 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800">
-                      <img
-                        src={`/api/placeholder/${client.width}/${client.height}`}
-                        alt={`${client.name} logo`}
-                        className="opacity-70 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125"
-                        style={{ width: client.width + 'px', height: client.height + 'px' }}
-                      />
+                      <div className="flex items-center justify-center h-12">
+                        <img
+                          src={client.imageUrl}
+                          alt={`${client.name} logo`}
+                          className="opacity-70 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125 max-h-full object-contain"
+                          style={{ maxWidth: client.maxWidth + 'px' }}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -109,12 +110,14 @@ const PremiumClientLogos = () => {
                     className="flex-shrink-0 group cursor-pointer transition-all duration-300 hover:scale-110"
                   >
                     <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 shadow-xl border border-gray-700 group-hover:border-orange-500/50 group-hover:shadow-2xl group-hover:shadow-orange-500/20 transition-all duration-300 hover:bg-gradient-to-br hover:from-gray-700 hover:to-gray-800">
-                      <img
-                        src={`/api/placeholder/${client.width}/${client.height}`}
-                        alt={`${client.name} logo`}
-                        className="opacity-70 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125"
-                        style={{ width: client.width + 'px', height: client.height + 'px' }}
-                      />
+                      <div className="flex items-center justify-center h-12">
+                        <img
+                          src={client.imageUrl}
+                          alt={`${client.name} logo`}
+                          className="opacity-70 group-hover:opacity-100 transition-all duration-300 filter brightness-110 group-hover:brightness-125 max-h-full object-contain"
+                          style={{ maxWidth: client.maxWidth + 'px' }}
+                        />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -122,29 +125,31 @@ const PremiumClientLogos = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Statistics section */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center p-6 bg-gradient-to-br from-gray-900/90 to-black/60 backdrop-blur-sm rounded-xl border border-orange-500/30 shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:border-orange-400/50">
-            <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mb-2">500+</div>
-            <div className="text-gray-300 font-medium">Global Clients</div>
+      {/* Statistics section */}
+      <div className="container px-4 md:px-6 mx-auto relative z-10 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="text-white">
+            <div className="text-3xl md:text-4xl font-bold text-orange-500">500+</div>
+            <div className="text-sm text-gray-400">Happy Clients</div>
           </div>
-          <div className="text-center p-6 bg-gradient-to-br from-gray-900/90 to-black/60 backdrop-blur-sm rounded-xl border border-orange-500/30 shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:border-orange-400/50">
-            <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mb-2">99.9%</div>
-            <div className="text-gray-300 font-medium">Uptime SLA</div>
+          <div className="text-white">
+            <div className="text-3xl md:text-4xl font-bold text-orange-500">98%</div>
+            <div className="text-sm text-gray-400">Satisfaction Rate</div>
           </div>
-          <div className="text-center p-6 bg-gradient-to-br from-gray-900/90 to-black/60 backdrop-blur-sm rounded-xl border border-orange-500/30 shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:border-orange-400/50">
-            <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mb-2">50+</div>
-            <div className="text-gray-300 font-medium">Countries</div>
+          <div className="text-white">
+            <div className="text-3xl md:text-4xl font-bold text-orange-500">24/7</div>
+            <div className="text-sm text-gray-400">Support</div>
           </div>
-          <div className="text-center p-6 bg-gradient-to-br from-gray-900/90 to-black/60 backdrop-blur-sm rounded-xl border border-orange-500/30 shadow-xl hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:border-orange-400/50">
-            <div className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mb-2">24/7</div>
-            <div className="text-gray-300 font-medium">Support</div>
+          <div className="text-white">
+            <div className="text-3xl md:text-4xl font-bold text-orange-500">10+</div>
+            <div className="text-sm text-gray-400">Years Experience</div>
           </div>
         </div>
       </div>
 
-      {/* Custom CSS for faster animations */}
+      {/* Animation styles */}
       <style jsx>{`
         @keyframes marquee-fast {
           0% { transform: translateX(0); }
