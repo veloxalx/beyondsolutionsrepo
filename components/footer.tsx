@@ -1,25 +1,55 @@
-import { useState } from "react"
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Trophy, ArrowRight, Star } from "lucide-react"
+import { useState } from "react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  Trophy,
+  ArrowRight,
+  Star,
+} from "lucide-react";
 
 export default function Footer() {
-  const [email, setEmail] = useState("")
-  const [isSubscribed, setIsSubscribed] = useState(false)
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
   const handleSubscribe = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (email) {
-      setIsSubscribed(true)
-      setTimeout(() => setIsSubscribed(false), 3000)
-      setEmail("")
+      setIsSubscribed(true);
+      setTimeout(() => setIsSubscribed(false), 3000);
+      setEmail("");
     }
-  }
+  };
 
   const socialLinks = [
-    { Icon: Facebook, label: "Facebook", gradient: "from-blue-500 to-blue-600" },
+    {
+      Icon: Facebook,
+      label: "Facebook",
+      gradient: "from-blue-500 to-blue-600",
+    },
     { Icon: Twitter, label: "Twitter", gradient: "from-sky-400 to-sky-500" },
-    { Icon: Instagram, label: "Instagram", gradient: "from-pink-500 to-purple-500" },
-    { Icon: Linkedin, label: "LinkedIn", gradient: "from-blue-600 to-blue-700" }
-  ]
+    {
+      Icon: Instagram,
+      label: "Instagram",
+      gradient: "from-pink-500 to-purple-500",
+    },
+    {
+      Icon: Linkedin,
+      label: "LinkedIn",
+      gradient: "from-blue-600 to-blue-700",
+    },
+  ];
+
+  const phoneNumbers = [
+    { number: "+94 772 771 224", name: "Imesh" },
+    { number: "+61 423 797 092", name: "" },
+    { number: "+94 707 077 079", name: "Shane" },
+    { number: "+94 775 545 952", name: "Gayan" },
+  ];
 
   return (
     <footer className="w-full bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
@@ -34,8 +64,19 @@ export default function Footer() {
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern id="footer-grid" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M 100 0 L 0 0 0 100" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.3"/>
+            <pattern
+              id="footer-grid"
+              width="100"
+              height="100"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 100 0 L 0 0 0 100"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                opacity="0.3"
+              />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#footer-grid)" />
@@ -45,9 +86,18 @@ export default function Footer() {
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-1.5 h-1.5 bg-orange-400 rounded-full animate-pulse opacity-60"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-amber-300 rounded-full animate-pulse opacity-80" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-orange-300 rounded-full animate-pulse opacity-70" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 right-1/3 w-0.5 h-0.5 bg-amber-400 rounded-full animate-pulse opacity-60" style={{ animationDelay: '0.5s' }}></div>
+        <div
+          className="absolute top-40 right-20 w-1 h-1 bg-amber-300 rounded-full animate-pulse opacity-80"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute bottom-32 left-1/4 w-1 h-1 bg-orange-300 rounded-full animate-pulse opacity-70"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-20 right-1/3 w-0.5 h-0.5 bg-amber-400 rounded-full animate-pulse opacity-60"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 pt-16 pb-8 relative z-10">
@@ -64,16 +114,26 @@ export default function Footer() {
                   <h3 className="text-xl font-bold bg-gradient-to-r from-white to-orange-300 bg-clip-text text-transparent">
                     Beyond Solutions
                   </h3>
-                  <p className="text-orange-400 text-xs font-medium">Elite Business Partners</p>
+                  <p className="text-orange-400 text-xs font-medium">
+                    Elite Business Partners
+                  </p>
                 </div>
               </div>
             </div>
-            
+
             <p className="text-gray-300 mb-6 leading-relaxed">
-              We help <span className="text-orange-400 font-semibold">elite organizations</span> achieve extraordinary results through our 
-              <span className="text-amber-400 font-semibold"> proprietary strategic solutions</span> that drive unmatched growth, innovation, and lasting success.
+              We help{" "}
+              <span className="text-orange-400 font-semibold">
+                elite organizations
+              </span>{" "}
+              achieve extraordinary results through our
+              <span className="text-amber-400 font-semibold">
+                {" "}
+                proprietary strategic solutions
+              </span>{" "}
+              that drive unmatched growth, innovation, and lasting success.
             </p>
-            
+
             <div className="flex gap-2">
               {socialLinks.map(({ Icon, label, gradient }, i) => (
                 <a
@@ -95,17 +155,21 @@ export default function Footer() {
               Company
             </h3>
             <ul className="space-y-3">
-              {["About", "Leadership", "Careers", "Contact", "Press"].map((item, i) => (
-                <li key={i}>
-                  <a
-                    href={`/${item.toLowerCase()}`}
-                    className="text-gray-400 hover:text-orange-400 transition-all duration-300 flex items-center gap-2 group"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-orange-500/30 group-hover:bg-orange-500 transition-all duration-300 group-hover:scale-125"></div>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">{item}</span>
-                  </a>
-                </li>
-              ))}
+              {["About", "Leadership", "Careers", "Contact", "Press"].map(
+                (item, i) => (
+                  <li key={i}>
+                    <a
+                      href={`/${item.toLowerCase()}`}
+                      className="text-gray-400 hover:text-orange-400 transition-all duration-300 flex items-center gap-2 group"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500/30 group-hover:bg-orange-500 transition-all duration-300 group-hover:scale-125"></div>
+                      <span className="group-hover:translate-x-1 transition-transform duration-300">
+                        {item}
+                      </span>
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -117,18 +181,23 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                "Elite Revenue Growth",
-                "Superior Operational Excellence", 
-                "Premier Digital Transformation",
-                "Unrivaled Market Expansion",
+                "Integrated Marketing Solutions",
+                "Conceptualizing",
+                "Design & Fabrication of Promotional Material",
+                "Crafting Marketing Strategy",
+                "Project Planning & Management",
               ].map((item, i) => (
                 <li key={i}>
                   <a
-                    href={`/solutions/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`/solutions/${item
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`}
                     className="text-gray-400 hover:text-orange-400 transition-all duration-300 flex items-center gap-2 group"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-amber-500/30 group-hover:bg-amber-500 transition-all duration-300 group-hover:scale-125"></div>
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">{item}</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                      {item}
+                    </span>
                   </a>
                 </li>
               ))}
@@ -146,12 +215,20 @@ export default function Footer() {
                   Exclusive Insights
                 </h3>
               </div>
-              
+
               <p className="text-gray-300 mb-6 leading-relaxed text-sm">
-                Join <span className="text-orange-400 font-semibold">industry leaders</span> receiving our premium insights, trends, and 
-                <span className="text-amber-400 font-semibold"> exclusive strategies</span> for exceptional business growth.
+                Join{" "}
+                <span className="text-orange-400 font-semibold">
+                  industry leaders
+                </span>{" "}
+                receiving our premium insights, trends, and
+                <span className="text-amber-400 font-semibold">
+                  {" "}
+                  exclusive strategies
+                </span>{" "}
+                for exceptional business growth.
               </p>
-              
+
               <div className="space-y-3">
                 <div className="relative">
                   <input
@@ -188,19 +265,23 @@ export default function Footer() {
               </p>
             </div>
           </div>
-          
-          <div className="flex items-start gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Phone className="h-4 w-4 text-white" />
-            </div>
-            <div>
-              <p className="text-gray-400 text-xs mb-1">Call Us</p>
-              <p className="text-white text-sm font-semibold group-hover:text-orange-400 transition-colors">
-                (800) 123-4567
-              </p>
-            </div>
+
+          <div className="space-y-4">
+            {phoneNumbers.map((phone, index) => (
+              <div key={index} className="flex items-start gap-3 group">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Phone className="h-4 w-4 text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-xs mb-1">Call Us</p>
+                  <p className="text-white text-sm font-semibold group-hover:text-orange-400 transition-colors">
+                    {phone.number} {phone.name && `– ${phone.name}`}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-          
+
           <div className="flex items-start gap-3 group">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-orange-600 to-red-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <MapPin className="h-4 w-4 text-white" />
@@ -208,7 +289,8 @@ export default function Footer() {
             <div>
               <p className="text-gray-400 text-xs mb-1">Visit Us</p>
               <p className="text-white text-sm font-semibold group-hover:text-orange-400 transition-colors">
-                123 Premium Plaza, Suite 500<br />New York, NY
+                181, Temple Road, Kalutara North
+                <br />
               </p>
             </div>
           </div>
@@ -221,11 +303,13 @@ export default function Footer() {
               <Trophy className="h-3 w-3 text-white" />
             </div>
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Beyond Solutions. 
-              <span className="text-orange-400 font-semibold ml-1">The Premier Business Transformation Partner.</span>
+              © {new Date().getFullYear()} Beyond Solutions.
+              <span className="text-orange-400 font-semibold ml-1">
+                The Premier Business Transformation Partner.
+              </span>
             </p>
           </div>
-          
+
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service"].map((item, i) => (
               <a
@@ -240,5 +324,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -6,94 +6,117 @@ import { ArrowRight, Check, Trophy, Star, TrendingUp, Zap, Target } from "lucide
 
 const solutions = [
   {
-    id: "revenue-growth",
-    title: "Elite Revenue Growth",
+    id: "integrated-marketing-solutions",
+    title: "Integrated Marketing Solutions",
     description:
-      "Industry-leading solutions to accelerate revenue growth through our proprietary marketing, sales enablement, and customer experience enhancement methodologies.",
+      "Comprehensive marketing solutions that seamlessly integrate across all channels to deliver consistent brand messaging and maximum market impact.",
     icon: <TrendingUp className="w-6 h-6" />,
     image: "/api/placeholder/800/400",
     challenge:
-      "Stagnant revenue growth despite increasing marketing spend and competitive market conditions limiting expansion.",
+      "Fragmented marketing efforts across multiple channels leading to inconsistent messaging and reduced campaign effectiveness.",
     solution:
-      "Our exclusive revenue acceleration framework identifies untapped growth opportunities and optimizes your entire customer acquisition and retention strategy for maximum impact.",
+      "Our integrated marketing approach unifies all marketing channels and touchpoints to create cohesive campaigns that amplify your brand message and drive measurable results.",
     results: [
-      "35% average increase in qualified leads",
-      "28% improvement in conversion rates",
-      "42% boost in customer lifetime value",
-      "3.2x return on marketing investment",
+      "45% increase in brand recognition",
+      "35% improvement in campaign ROI",
+      "60% better message consistency across channels",
+      "40% increase in lead generation",
     ],
     caseStudy: {
-      company: "TechVision Inc.",
-      industry: "SaaS",
-      result: "200% revenue growth in 12 months",
+      company: "Brand Excellence Corp.",
+      industry: "Retail",
+      result: "Unified marketing approach led to 180% sales growth",
     },
   },
   {
-    id: "operational-efficiency",
-    title: "Superior Operational Excellence",
+    id: "conceptualizing",
+    title: "Conceptualizing",
     description:
-      "Unmatched process optimization, cost reduction, and productivity enhancement through our proprietary operational excellence methodology.",
+      "Transform your ideas into powerful strategic concepts through our innovative ideation and creative development processes.",
     icon: <Zap className="w-6 h-6" />,
     image: "/api/placeholder/800/400",
-    challenge: "Inefficient processes causing high operational costs, slow delivery times, and reduced profit margins.",
+    challenge: "Struggling to translate business objectives into compelling creative concepts that resonate with target audiences.",
     solution:
-      "Our exclusive operational excellence methodology identifies inefficiencies and implements streamlined processes with clear metrics and accountability for superior results.",
+      "Our expert conceptualization process combines strategic thinking with creative innovation to develop breakthrough concepts that capture attention and drive action.",
     results: [
-      "40% reduction in operational costs",
-      "65% improvement in process efficiency",
-      "30% faster delivery times",
-      "25% increase in employee productivity",
+      "90% client satisfaction with concept development",
+      "50% faster concept-to-market timeline",
+      "65% increase in concept approval rates",
+      "70% improvement in creative impact metrics",
     ],
     caseStudy: {
-      company: "Global Manufacturing Corp.",
-      industry: "Manufacturing",
-      result: "Saved $2.5M annually in operational costs",
+      company: "Innovation Dynamics",
+      industry: "Technology",
+      result: "Revolutionary product concept led to $5M funding round",
     },
   },
   {
-    id: "digital-transformation",
-    title: "Premier Digital Transformation",
+    id: "design-fabrication-promotional",
+    title: "Design & Fabrication of Promotional Material",
     description:
-      "Best-in-class digital solutions that enhance customer experience and drive competitive advantage through our proprietary transformation framework.",
+      "Premium design and fabrication services that bring your promotional materials to life with exceptional quality and attention to detail.",
     icon: <Star className="w-6 h-6" />,
     image: "/api/placeholder/800/400",
     challenge:
-      "Legacy systems and outdated processes creating friction in customer experience and limiting business agility.",
+      "Need for high-quality promotional materials that stand out in competitive markets while maintaining cost-effectiveness.",
     solution:
-      "Our exclusive digital transformation framework modernizes your technology stack while ensuring perfect alignment with business goals and user needs for maximum impact.",
+      "Our end-to-end design and fabrication services ensure your promotional materials are professionally crafted, visually stunning, and perfectly aligned with your brand identity.",
     results: [
-      "75% improvement in customer satisfaction",
-      "60% reduction in IT maintenance costs",
-      "45% faster time-to-market for new products",
-      "85% increase in business agility metrics",
+      "95% on-time delivery rate",
+      "85% reduction in material waste",
+      "75% improvement in material quality scores",
+      "60% increase in promotional campaign effectiveness",
     ],
     caseStudy: {
-      company: "Nexus Financial",
-      industry: "Financial Services",
-      result: "Digital transformation led to 120% growth",
+      company: "Premium Events Ltd.",
+      industry: "Events & Entertainment",
+      result: "Award-winning promotional materials increased event attendance by 250%",
     },
   },
   {
-    id: "market-expansion",
-    title: "Unrivaled Market Expansion",
+    id: "crafting-marketing-strategy",
+    title: "Crafting Marketing Strategy",
     description:
-      "Dominate new markets with our proprietary market analysis and strategic entry planning methodology that delivers superior results.",
+      "Develop winning marketing strategies that align with your business objectives and deliver sustainable competitive advantage.",
     icon: <Target className="w-6 h-6" />,
     image: "/api/placeholder/800/400",
     challenge:
-      "Saturated current markets limiting growth potential and uncertainty about which new markets to prioritize.",
+      "Lack of clear marketing direction and strategy leading to inefficient resource allocation and missed growth opportunities.",
     solution:
-      "Our exclusive market expansion strategy identifies optimal new markets, creates tailored entry plans, and mitigates expansion risks for maximum success.",
+      "Our strategic marketing planning process creates comprehensive, data-driven strategies that align with your business goals and market realities for maximum impact.",
     results: [
-      "Successfully entered 5+ new markets on average",
-      "50% faster market penetration than industry average",
-      "35% higher ROI on expansion investments",
-      "85% success rate for new market entries",
+      "80% improvement in marketing efficiency",
+      "55% increase in market share",
+      "70% better resource allocation",
+      "90% achievement of strategic marketing goals",
     ],
     caseStudy: {
-      company: "Horizon Brands",
-      industry: "Consumer Goods",
-      result: "Expanded to 7 new markets in 18 months",
+      company: "Strategic Growth Partners",
+      industry: "Consulting",
+      result: "New marketing strategy doubled client acquisition in 6 months",
+    },
+  },
+  {
+    id: "project-planning-management",
+    title: "Project Planning & Management",
+    description:
+      "Expert project planning and management services that ensure your initiatives are delivered on time, within budget, and exceed expectations.",
+    icon: <Zap className="w-6 h-6" />,
+    image: "/api/placeholder/800/400",
+    challenge:
+      "Complex projects failing to meet deadlines and budgets due to poor planning and ineffective management processes.",
+    solution:
+      "Our proven project management methodology combines strategic planning with agile execution to deliver exceptional results while maintaining full transparency and control.",
+    results: [
+      "98% on-time project delivery rate",
+      "85% projects completed under budget",
+      "95% client satisfaction scores",
+      "75% reduction in project risks",
+    ],
+    caseStudy: {
+      company: "Enterprise Solutions Inc.",
+      industry: "Business Services",
+      result: "Managed 15+ complex projects with 100% success rate",
     },
   },
 ]
