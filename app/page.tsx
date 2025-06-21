@@ -83,17 +83,17 @@ export default function Home() {
           <EliteCaseStudies />
         </FadeInSection>
 
-        <FadeInSection delay={0.5}>
+        {/* <FadeInSection delay={0.5}>
           <EliteSolutions />
-        </FadeInSection>
+        </FadeInSection> */}
 
         <FadeInSection delay={0.7}>
           <ExclusiveProcess />
         </FadeInSection>
 
-        <FadeInSection delay={0.8}>
+        {/* <FadeInSection delay={0.8}>
           <CTASection />
-        </FadeInSection>
+        </FadeInSection> */}
 
         <Footer />
 
