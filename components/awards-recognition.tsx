@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Award, Trophy, Star, Medal, Crown, Shield, Zap, Target, TrendingUp, CheckCircle } from 'lucide-react'
+import { Award, Trophy, Star, Medal, Crown, Shield, Zap, Target, TrendingUp, CheckCircle, Globe, Handshake, Lightbulb } from 'lucide-react'
 
 const AwardsRecognition = () => {
   const sectionRef = useRef(null)
@@ -10,107 +10,83 @@ const AwardsRecognition = () => {
 const awards = [
   {
     id: 1,
-    title: "Business Excellence Award",
-    organization: "Global Business Institute",
+    title: "Campaign Mastery Award",
+    organization: "Beyond Creative Council",
     year: "2024",
-    icon: Trophy,
+    icon: Star,
     color: "from-orange-500 to-orange-600",
     accentColor: "from-orange-400 to-orange-500",
     bgColor: "from-orange-500/10 to-orange-600/5",
-    description: "Outstanding achievement in strategic consulting and business transformation",
-    category: "Excellence"
+    description: "For successfully delivering over 300 impactful marketing campaigns across diverse sectors",
+    category: "Marketing"
   },
   {
     id: 2,
-    title: "Innovation Leader",
-    organization: "Tech Innovation Council",
+    title: "Event Excellence Recognition",
+    organization: "National Event Council",
     year: "2024",
-    icon: Zap,
-    color: "from-orange-400 to-orange-500",
-    accentColor: "from-orange-300 to-orange-400",
-    bgColor: "from-orange-400/10 to-orange-500/5",
-    description: "Recognized for breakthrough digital transformation solutions",
-    category: "Innovation"
+    icon: Trophy,
+    color: "from-orange-600 to-yellow-500",
+    accentColor: "from-orange-500 to-yellow-400",
+    bgColor: "from-orange-600/10 to-yellow-500/5",
+    description: "Recognized for delivering over 200 large-scale, high-impact events across South Asia",
+    category: "Event Management"
   },
   {
     id: 3,
-    title: "Top Consulting Firm",
-    organization: "Industry Leaders Forum",
-    year: "2023",
-    icon: Crown,
-    color: "from-orange-600 to-orange-500",
-    accentColor: "from-orange-500 to-orange-400",
-    bgColor: "from-orange-600/10 to-orange-500/5",
-    description: "Ranked #1 in strategic consulting services and client satisfaction",
-    category: "Leadership"
-  },
-  {
-    id: 4,
-    title: "Customer Excellence",
-    organization: "Service Quality Alliance",
-    year: "2023",
-    icon: Star,
-    color: "from-orange-500 to-yellow-500",
-    accentColor: "from-orange-400 to-yellow-400",
-    bgColor: "from-orange-500/10 to-yellow-500/5",
-    description: "Exceptional client service and satisfaction ratings above 98%",
-    category: "Service"
-  },
-  {
-    id: 5,
-    title: "Digital Pioneer Award",
-    organization: "Digital Transformation Institute",
-    year: "2023",
-    icon: Target,
-    color: "from-yellow-500 to-orange-500",
-    accentColor: "from-yellow-400 to-orange-400",
-    bgColor: "from-yellow-500/10 to-orange-500/5",
-    description: "Leading digital transformation initiatives across Fortune 500 companies",
-    category: "Digital"
-  },
-  {
-    id: 6,
-    title: "Performance Excellence",
-    organization: "Global Performance Council",
-    year: "2022",
-    icon: TrendingUp,
-    color: "from-orange-500 to-red-500",
-    accentColor: "from-orange-400 to-red-400",
-    bgColor: "from-orange-500/10 to-red-500/5",
-    description: "Outstanding ROI delivery and operational efficiency improvements",
-    category: "Performance"
-  },
-  {
-    id: 7,
-    title: "Trust & Security Award",
-    organization: "Business Security Alliance",
-    year: "2022",
-    icon: Shield,
-    color: "from-orange-600 to-orange-700",
-    accentColor: "from-orange-500 to-orange-600",
-    bgColor: "from-orange-600/10 to-orange-700/5",
-    description: "Highest standards in data security and client confidentiality",
-    category: "Security"
-  },
-  {
-    id: 8,
-    title: "Industry Champion",
-    organization: "Professional Services Awards",
-    year: "2022",
-    icon: Medal,
+    title: "Digital Delivery Champion",
+    organization: "Tech Innovators Alliance",
+    year: "2024",
+    icon: Zap,
     color: "from-orange-400 to-orange-600",
     accentColor: "from-orange-300 to-orange-500",
     bgColor: "from-orange-400/10 to-orange-600/5",
-    description: "Championing excellence in professional consulting services",
-    category: "Achievement"
+    description: "Honored for developing and launching over 100 web, app, and MIS platforms across government and NGO sectors",
+    category: "Technology"
+  },
+  {
+    id: 4,
+    title: "Regional Expansion Award",
+    organization: "Emerging Markets Forum",
+    year: "2023",
+    icon: Globe,
+    color: "from-orange-500 to-blue-500",
+    accentColor: "from-orange-400 to-blue-400",
+    bgColor: "from-orange-500/10 to-blue-500/5",
+    description: "Awarded for successful operational scale-up across Sri Lanka, Pakistan, and Afghanistan",
+    category: "Global Presence"
+  },
+  {
+    id: 5,
+    title: "NGO & Development Partner Award",
+    organization: "Development Sector Alliance",
+    year: "2023",
+    icon: Handshake,
+    color: "from-orange-600 to-green-500",
+    accentColor: "from-orange-500 to-green-400",
+    bgColor: "from-orange-600/10 to-green-500/5",
+    description: "Recognized for supporting humanitarian and development programs through ICT, MEAL, and programmatic solutions",
+    category: "Development"
+  },
+  {
+    id: 6,
+    title: "Innovation & Impact Distinction",
+    organization: "Social Innovation Lab",
+    year: "2023",
+    icon: Lightbulb,
+    color: "from-orange-500 to-purple-500",
+    accentColor: "from-orange-400 to-purple-400",
+    bgColor: "from-orange-500/10 to-purple-500/5",
+    description: "Acknowledged for innovative digital solutions that created measurable impact across sectors",
+    category: "Innovation"
   }
 ];
 
 const stats = [
-  { number: "50+", label: "Awards Won", icon: Trophy },
-  { number: "98%", label: "Client Satisfaction", icon: Star },
-  { number: "15+", label: "Years Excellence", icon: Award },
-  { number: "500+", label: "Success Stories", icon: CheckCircle }
+  { number: "300+", label: "Marketing Campaigns Delivered", icon: Star },
+  { number: "200+", label: "High-Impact Events Managed", icon: Trophy },
+  { number: "100+", label: "Web & MIS Platforms Built", icon: Zap },
+  { number: "3", label: "Countries with Active Operations", icon: Globe }
 ];
 
 
