@@ -11,6 +11,7 @@ import {
   ChevronRight,
   Sparkles,
   Crown,
+  Cog,
 } from "lucide-react";
 
 const Hero = () => {
@@ -21,48 +22,61 @@ const Hero = () => {
   const [progressWidth, setProgressWidth] = useState(0);
   const heroRef = useRef(null);
   const intervalRef = useRef(null);
+const services = [
+  {
+    id: 1,
+    title: "Creative Marketing",
+    subtitle: "Innovative Brand & Campaign Execution",
+    description: "Empower your brand with visually compelling, strategically crafted marketing campaigns that resonate with your audience and drive measurable growth.",
+    icon: Target,
+    primaryColor: "from-orange-500 to-orange-400",
+    secondaryColor: "from-orange-500/20 to-orange-400/10",
+    stats: "300+ Campaigns",
+    metric: "50% Brand Lift",
+    features: ["Brand Strategy", "Social Campaigns", "Content Marketing"],
+    bgPattern: "radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%)",
+  },
+  {
+    id: 2,
+    title: "Digital Solutions",
+    subtitle: "Powerful Web, App & Software Systems",
+    description: "Build scalable websites, mobile apps, and software systems tailored to enhance your operational effectiveness and digital presence.",
+    icon: Zap,
+    primaryColor: "from-orange-600 to-orange-400",
+    secondaryColor: "from-orange-600/20 to-orange-400/10",
+    stats: "100+ Platforms Built",
+    metric: "40% Faster Delivery",
+    features: ["Web & App Dev", "Custom Software", "UI/UX"],
+    bgPattern: "radial-gradient(circle at 80% 20%, rgba(234, 88, 12, 0.1) 0%, transparent 50%)",
+  },
+  {
+    id: 3,
+    title: "Event Management",
+    subtitle: "Immersive Brand Experiences",
+    description: "Deliver impactful, flawlessly executed events and activations that strengthen customer engagement and elevate your brand identity.",
+    icon: TrendingUp,
+    primaryColor: "from-orange-500 to-orange-300",
+    secondaryColor: "from-orange-500/20 to-orange-300/10",
+    stats: "200+ Events Delivered",
+    metric: "90% Client Retention",
+    features: ["Corporate Events", "Production Logistics", "Brand Activations"],
+    bgPattern: "radial-gradient(circle at 50% 50%, rgba(251, 146, 60, 0.1) 0%, transparent 50%)",
+  },
+  {
+    id: 4,
+    title: "ICT & MIS Systems",
+    subtitle: "Data-Driven Efficiency & Insights",
+    description: "Empower organizations with custom MIS platforms, real-time data dashboards, and ICT systems to optimize operations and decision-making.",
+    icon: Cog,
+    primaryColor: "from-orange-400 to-orange-300",
+    secondaryColor: "from-orange-400/20 to-orange-300/10",
+    stats: "50+ MIS Projects",
+    metric: "60% Decision Speed Gain",
+    features: ["MIS Platforms", "GIS/BI Systems", "ICT for NGOs"],
+    bgPattern: "radial-gradient(circle at 60% 60%, rgba(251, 146, 60, 0.08) 0%, transparent 50%)",
+  }
+];
 
-  const services = [
-    {
-      id: 1,
-      title: "Strategic Consulting",
-      subtitle: "Future-Ready Business Strategy",
-      description: "Transform your business strategy with data-driven insights and proven methodologies that deliver measurable results across all organizational levels.",
-      icon: Target,
-      primaryColor: "from-orange-500 to-orange-400",
-      secondaryColor: "from-orange-500/20 to-orange-400/10",
-      stats: "500+ Strategies",
-      metric: "85% Success Rate",
-      features: ["Market Analysis", "Strategic Roadmaps", "Implementation"],
-      bgPattern: "radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%)",
-    },
-    {
-      id: 2,
-      title: "Digital Transformation",
-      subtitle: "Next-Gen Technology Solutions",  
-      description: "Modernize operations with cutting-edge technology solutions and automation that drives efficiency across your entire organization ecosystem.",
-      icon: Zap,
-      primaryColor: "from-orange-600 to-orange-400",
-      secondaryColor: "from-orange-600/20 to-orange-400/10",
-      stats: "98% Success Rate",
-      metric: "60% Efficiency Gain",
-      features: ["Cloud Migration", "Automation", "Integration"],
-      bgPattern: "radial-gradient(circle at 80% 20%, rgba(234, 88, 12, 0.1) 0%, transparent 50%)",
-    },
-    {
-      id: 3,
-      title: "Performance Optimization",
-      subtitle: "Maximize ROI & Efficiency",
-      description: "Maximize efficiency and ROI through systematic improvements and optimization strategies that deliver tangible, measurable business results.",
-      icon: TrendingUp,
-      primaryColor: "from-orange-500 to-orange-300",
-      secondaryColor: "from-orange-500/20 to-orange-300/10",
-      stats: "40% ROI Increase",
-      metric: "200+ Projects",
-      features: ["Process Improvement", "Analytics", "Cost Optimization"],
-      bgPattern: "radial-gradient(circle at 50% 50%, rgba(251, 146, 60, 0.1) 0%, transparent 50%)",
-    },
-  ];
 
   // Enhanced auto-rotation with progress tracking
   useEffect(() => {
