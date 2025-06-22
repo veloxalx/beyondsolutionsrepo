@@ -238,7 +238,7 @@ const services = [
             <div className={`flex justify-center items-center gap-8 text-sm text-gray-400 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{transitionDelay: '0.8s'}}>
               <span className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                Fortune 500 Trusted
+                SL20 Trusted
               </span>
               <span className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}} />

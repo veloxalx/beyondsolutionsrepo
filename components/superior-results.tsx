@@ -172,7 +172,7 @@ const SuperiorResults = () => {
             </div>
           </div>
           
-          <h2 className="text-6xl md:text-7xl font-black mb-10 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-10 tracking-tight leading-tight">
             <span className="block bg-gradient-to-r from-white via-orange-400 to-amber-300 bg-clip-text text-transparent bg-300% animate-gradient-x">
               Superior Results for
             </span>
@@ -181,13 +181,13 @@ const SuperiorResults = () => {
             </span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-gray-300 max-w-5xl mx-auto leading-relaxed mb-8">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-5xl mx-auto leading-relaxed mb-8">
             Our strategic solutions consistently deliver exceptional outcomes that 
             <span className="text-orange-400 font-bold animate-pulse"> transform businesses</span> and 
             <span className="text-amber-400 font-bold animate-pulse"> drive unprecedented growth</span>
           </p>
 
-          <div className="flex justify-center gap-4 text-sm text-gray-400">
+          <div className="flex flex-wrap justify-center gap-4 text-xs sm:text-sm text-gray-400">
             <span className="flex items-center gap-2">
               <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
               Real-time metrics
@@ -294,34 +294,34 @@ const SuperiorResults = () => {
 
         {/* Enhanced Call to Action */}
         <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{transitionDelay: '1.5s'}}>
-          <div className="group inline-flex items-center gap-4 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 hover:from-orange-500 hover:via-amber-400 hover:to-orange-400 text-white px-10 py-5 rounded-full font-bold text-xl transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40 cursor-pointer relative overflow-hidden">
+          <div className="group inline-flex items-center gap-4 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 hover:from-orange-500 hover:via-amber-400 hover:to-orange-400 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40 cursor-pointer relative overflow-hidden">
             <span className="relative z-10">Discover Your Potential</span>
             
             {/* Animated arrow */}
-            <div className="relative z-10 w-8 h-8 border-2 border-white rounded-full flex items-center justify-center group-hover:rotate-90 transition-transform duration-500">
-              <div className="w-3 h-3 bg-white rounded-full transform translate-x-px group-hover:scale-125 transition-transform duration-300"></div>
+            <div className="relative z-10 w-6 sm:w-8 h-6 sm:h-8 border-2 border-white rounded-full flex items-center justify-center group-hover:rotate-90 transition-transform duration-500">
+              <div className="w-2 sm:w-3 h-2 sm:h-3 bg-white rounded-full transform translate-x-px group-hover:scale-125 transition-transform duration-300"></div>
             </div>
             
             {/* Shimmer effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
           </div>
           
-          <p className="text-gray-400 text-base mt-6 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-400 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
             Join the <span className="text-orange-400 font-semibold">500+ elite organizations</span> already experiencing transformational growth with our proven methodologies
           </p>
           
           {/* Trust indicators */}
-          <div className="flex justify-center items-center gap-8 mt-8 text-gray-500 text-sm">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-8 text-gray-500 text-xs sm:text-sm">
             <span className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-green-500 rounded-full"></div>
-              Fortune 500 Approved
+              <div className="w-3 sm:w-4 h-3 sm:h-4 bg-green-500 rounded-full"></div>
+              SL20 Approved
             </span>
             <span className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+              <div className="w-3 sm:w-4 h-3 sm:h-4 bg-blue-500 rounded-full"></div>
               ISO Certified
             </span>
             <span className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+              <div className="w-3 sm:w-4 h-3 sm:h-4 bg-purple-500 rounded-full"></div>
               99.9% Uptime
             </span>
           </div>
