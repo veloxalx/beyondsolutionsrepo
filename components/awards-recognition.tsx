@@ -7,111 +7,112 @@ const AwardsRecognition = () => {
   const isInView = useInView(sectionRef, { once: true, threshold: 0.1 })
   const [hoveredAward, setHoveredAward] = useState(null)
 
-  const awards = [
-    {
-      id: 1,
-      title: "Business Excellence Award",
-      organization: "Global Business Institute",
-      year: "2024",
-      icon: Trophy,
-      color: "from-orange-500 to-orange-600",
-      accentColor: "from-orange-400 to-orange-500",
-      bgColor: "from-orange-500/10 to-orange-600/5",
-      description: "Outstanding achievement in strategic consulting and business transformation",
-      category: "Excellence"
-    },
-    {
-      id: 2,
-      title: "Innovation Leader",
-      organization: "Tech Innovation Council",
-      year: "2024",
-      icon: Zap,
-      color: "from-orange-400 to-orange-500",
-      accentColor: "from-orange-300 to-orange-400",
-      bgColor: "from-orange-400/10 to-orange-500/5",
-      description: "Recognized for breakthrough digital transformation solutions",
-      category: "Innovation"
-    },
-    {
-      id: 3,
-      title: "Top Consulting Firm",
-      organization: "Industry Leaders Forum",
-      year: "2023",
-      icon: Crown,
-      color: "from-orange-600 to-orange-500",
-      accentColor: "from-orange-500 to-orange-400",
-      bgColor: "from-orange-600/10 to-orange-500/5",
-      description: "Ranked #1 in strategic consulting services and client satisfaction",
-      category: "Leadership"
-    },
-    {
-      id: 4,
-      title: "Customer Excellence",
-      organization: "Service Quality Alliance",
-      year: "2023",
-      icon: Star,
-      color: "from-orange-500 to-yellow-500",
-      accentColor: "from-orange-400 to-yellow-400",
-      bgColor: "from-orange-500/10 to-yellow-500/5",
-      description: "Exceptional client service and satisfaction ratings above 98%",
-      category: "Service"
-    },
-    {
-      id: 5,
-      title: "Digital Pioneer Award",
-      organization: "Digital Transformation Institute",
-      year: "2023",
-      icon: Target,
-      color: "from-yellow-500 to-orange-500",
-      accentColor: "from-yellow-400 to-orange-400",
-      bgColor: "from-yellow-500/10 to-orange-500/5",
-      description: "Leading digital transformation initiatives across Fortune 500 companies",
-      category: "Digital"
-    },
-    {
-      id: 6,
-      title: "Performance Excellence",
-      organization: "Global Performance Council",
-      year: "2022",
-      icon: TrendingUp,
-      color: "from-orange-500 to-red-500",
-      accentColor: "from-orange-400 to-red-400",
-      bgColor: "from-orange-500/10 to-red-500/5",
-      description: "Outstanding ROI delivery and operational efficiency improvements",
-      category: "Performance"
-    },
-    {
-      id: 7,
-      title: "Trust & Security Award",
-      organization: "Business Security Alliance",
-      year: "2022",
-      icon: Shield,
-      color: "from-orange-600 to-orange-700",
-      accentColor: "from-orange-500 to-orange-600",
-      bgColor: "from-orange-600/10 to-orange-700/5",
-      description: "Highest standards in data security and client confidentiality",
-      category: "Security"
-    },
-    {
-      id: 8,
-      title: "Industry Champion",
-      organization: "Professional Services Awards",
-      year: "2022",
-      icon: Medal,
-      color: "from-orange-400 to-orange-600",
-      accentColor: "from-orange-300 to-orange-500",
-      bgColor: "from-orange-400/10 to-orange-600/5",
-      description: "Championing excellence in professional consulting services",
-      category: "Achievement"
-    }
-  ]
+const awards = [
+  {
+    id: 1,
+    title: "Business Excellence Award",
+    organization: "Global Business Institute",
+    year: "2024",
+    icon: Trophy,
+    color: "from-orange-500 to-orange-600",
+    accentColor: "from-orange-400 to-orange-500",
+    bgColor: "from-orange-500/10 to-orange-600/5",
+    description: "Outstanding achievement in strategic consulting and business transformation",
+    category: "Excellence"
+  },
+  {
+    id: 2,
+    title: "Innovation Leader",
+    organization: "Tech Innovation Council",
+    year: "2024",
+    icon: Zap,
+    color: "from-orange-400 to-orange-500",
+    accentColor: "from-orange-300 to-orange-400",
+    bgColor: "from-orange-400/10 to-orange-500/5",
+    description: "Recognized for breakthrough digital transformation solutions",
+    category: "Innovation"
+  },
+  {
+    id: 3,
+    title: "Top Consulting Firm",
+    organization: "Industry Leaders Forum",
+    year: "2023",
+    icon: Crown,
+    color: "from-orange-600 to-orange-500",
+    accentColor: "from-orange-500 to-orange-400",
+    bgColor: "from-orange-600/10 to-orange-500/5",
+    description: "Ranked #1 in strategic consulting services and client satisfaction",
+    category: "Leadership"
+  },
+  {
+    id: 4,
+    title: "Customer Excellence",
+    organization: "Service Quality Alliance",
+    year: "2023",
+    icon: Star,
+    color: "from-orange-500 to-yellow-500",
+    accentColor: "from-orange-400 to-yellow-400",
+    bgColor: "from-orange-500/10 to-yellow-500/5",
+    description: "Exceptional client service and satisfaction ratings above 98%",
+    category: "Service"
+  },
+  {
+    id: 5,
+    title: "Digital Pioneer Award",
+    organization: "Digital Transformation Institute",
+    year: "2023",
+    icon: Target,
+    color: "from-yellow-500 to-orange-500",
+    accentColor: "from-yellow-400 to-orange-400",
+    bgColor: "from-yellow-500/10 to-orange-500/5",
+    description: "Leading digital transformation initiatives across Fortune 500 companies",
+    category: "Digital"
+  },
+  {
+    id: 6,
+    title: "Performance Excellence",
+    organization: "Global Performance Council",
+    year: "2022",
+    icon: TrendingUp,
+    color: "from-orange-500 to-red-500",
+    accentColor: "from-orange-400 to-red-400",
+    bgColor: "from-orange-500/10 to-red-500/5",
+    description: "Outstanding ROI delivery and operational efficiency improvements",
+    category: "Performance"
+  },
+  {
+    id: 7,
+    title: "Trust & Security Award",
+    organization: "Business Security Alliance",
+    year: "2022",
+    icon: Shield,
+    color: "from-orange-600 to-orange-700",
+    accentColor: "from-orange-500 to-orange-600",
+    bgColor: "from-orange-600/10 to-orange-700/5",
+    description: "Highest standards in data security and client confidentiality",
+    category: "Security"
+  },
+  {
+    id: 8,
+    title: "Industry Champion",
+    organization: "Professional Services Awards",
+    year: "2022",
+    icon: Medal,
+    color: "from-orange-400 to-orange-600",
+    accentColor: "from-orange-300 to-orange-500",
+    bgColor: "from-orange-400/10 to-orange-600/5",
+    description: "Championing excellence in professional consulting services",
+    category: "Achievement"
+  }
+];
 
-  const stats = [
-    { number: "50+", label: "Awards Won", icon: Trophy },
-    { number: "98%", label: "Client Satisfaction", icon: Star },
-    { number: "15+", label: "Years Excellence", icon: Award },
-    { number: "500+", label: "Success Stories", icon: CheckCircle }
-  ]
+const stats = [
+  { number: "50+", label: "Awards Won", icon: Trophy },
+  { number: "98%", label: "Client Satisfaction", icon: Star },
+  { number: "15+", label: "Years Excellence", icon: Award },
+  { number: "500+", label: "Success Stories", icon: CheckCircle }
+];
+
 
   return (
     <section 
