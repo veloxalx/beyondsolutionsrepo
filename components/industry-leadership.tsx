@@ -3,90 +3,91 @@ import { ArrowRight, Trophy, Check, Zap, Building2, Heart, Cog } from "lucide-re
 
 const industries = [
   {
-    id: "technology",
-    name: "Technology",
+    id: "marketing",
+    name: "Creative Marketing",
     icon: Zap,
     description:
-      "We deliver cutting-edge solutions for technology companies, helping them accelerate innovation and growth in the digital landscape.",
+      "We develop powerful branding, strategic campaigns, and digital marketing experiences that connect with your audience and elevate your brand.",
     expertise: [
-      "Digital transformation acceleration",
-      "Product development optimization", 
-      "Market expansion strategies",
-      "Customer acquisition excellence",
+      "Brand strategy and design",
+      "Social media campaigns",
+      "Content creation and storytelling",
+      "Targeted digital marketing",
     ],
     results: [
-      "35% average increase in revenue growth",
-      "40% improvement in product development efficiency",
-      "65% faster time-to-market for new products",
+      "Increased brand awareness by up to 50%",
+      "Higher engagement rates across platforms",
+      "Enhanced customer acquisition performance",
     ],
     gradient: "from-orange-500 via-orange-600 to-orange-700",
     bgGradient: "from-orange-500/20 via-orange-600/10 to-orange-700/5",
     borderGradient: "from-orange-500 to-orange-600"
   },
   {
-    id: "finance",
-    name: "Financial Services",
+    id: "digital",
+    name: "Digital Solutions",
     icon: Building2,
     description:
-      "Our solutions help financial institutions navigate regulatory challenges while driving innovation and customer-centricity.",
+      "We design and build digital platforms including mobile apps, websites, and systems tailored for performance and scalability.",
     expertise: [
-      "Regulatory compliance frameworks",
-      "Digital banking transformation",
-      "Customer experience enhancement",
-      "Operational efficiency optimization",
+      "Website and platform development",
+      "Mobile application development",
+      "Custom software engineering",
+      "UX/UI design and prototyping",
     ],
     results: [
-      "40% reduction in operational costs",
-      "35% increase in customer satisfaction",
-      "60% improvement in regulatory compliance efficiency",
+      "40% faster deployment of digital platforms",
+      "Improved user retention and satisfaction",
+      "Boosted system performance and reliability",
     ],
     gradient: "from-orange-600 via-orange-700 to-orange-800",
     bgGradient: "from-orange-600/20 via-orange-700/10 to-orange-800/5",
     borderGradient: "from-orange-600 to-orange-700"
   },
   {
-    id: "healthcare",
-    name: "Healthcare",
+    id: "events",
+    name: "Event Management",
     icon: Heart,
     description:
-      "We deliver solutions that improve patient outcomes and operational efficiency in the complex healthcare landscape.",
+      "We create and manage unforgettable events, from high-end corporate functions to immersive experiential marketing activations.",
     expertise: [
-      "Patient experience optimization",
-      "Healthcare operations efficiency",
-      "Technology integration and security",
-      "Regulatory compliance excellence",
+      "Corporate event planning",
+      "Conference and launch management",
+      "On-ground logistics & production",
+      "Event branding and promotion",
     ],
     results: [
-      "45% improvement in patient satisfaction",
-      "40% reduction in operational costs",
-      "35% increase in staff productivity",
+      "Flawless delivery of 200+ events",
+      "Improved audience engagement",
+      "Higher ROI from experiential campaigns",
     ],
     gradient: "from-orange-400 via-orange-500 to-orange-600",
     bgGradient: "from-orange-400/20 via-orange-500/10 to-orange-600/5",
     borderGradient: "from-orange-400 to-orange-500"
   },
   {
-    id: "manufacturing",
-    name: "Manufacturing",
+    id: "systems",
+    name: "MIS & ICT Solutions",
     icon: Cog,
     description:
-      "Our solutions optimize production processes and supply chains to increase efficiency and competitiveness.",
+      "Our tailored MIS and ICT systems empower organizations with real-time data, operational insights, and efficient service delivery.",
     expertise: [
-      "Supply chain optimization",
-      "Smart manufacturing implementation",
-      "Operational excellence programs",
-      "Quality management systems",
+      "Custom MIS platform development",
+      "GIS and business intelligence systems",
+      "Data collection and visualization",
+      "ICT solutions for development and NGOs",
     ],
     results: [
-      "65% improvement in process efficiency",
-      "40% reduction in supply chain costs",
-      "30% increase in product quality metrics",
+      "60% improvement in data accessibility",
+      "Streamlined decision-making processes",
+      "Increased organizational transparency",
     ],
     gradient: "from-orange-300 via-orange-400 to-orange-500",
     bgGradient: "from-orange-300/20 via-orange-400/10 to-orange-500/5",
     borderGradient: "from-orange-300 to-orange-400"
   },
-]
+];
+
 
 export default function IndustryLeadership() {
   const [activeIndustry, setActiveIndustry] = useState(industries[0])
