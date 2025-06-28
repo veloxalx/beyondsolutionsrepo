@@ -76,9 +76,9 @@ export default function Home() {
         <FadeInSection delay={0.1}>
           <AwardsRecognition />
         </FadeInSection>
-        <FadeInSection delay={0.4}>
+        {/* <FadeInSection delay={0.4}>
           <IndustryLeadership />
-        </FadeInSection>
+        </FadeInSection> */}
         <FadeInSection delay={0.6}>
           <EliteCaseStudies />
         </FadeInSection>
