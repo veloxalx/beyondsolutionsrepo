@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  scroll-behavior: smooth;
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   font-variant-numeric: oldstyle-nums;

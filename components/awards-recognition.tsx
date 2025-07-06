@@ -127,7 +127,7 @@ const stats = [
           </div>
           
           <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">Awards & </span>
+            <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent" id='awards'>Awards & </span>
             <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Recognition</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
@@ -260,13 +260,21 @@ const stats = [
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Let us help you achieve the same level of excellence that has earned us industry recognition
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-12 py-4 rounded-full text-lg shadow-xl shadow-orange-500/25 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/40"
+          <a
+            href="https://wa.me/1234567890" // Replace with your WhatsApp number
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 group inline-block"
+          >
+            Start Your Journey
+            <motion.span
+              className="inline-block ml-2"
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
             >
-              Start Your Journey
-            </motion.button>
+              →
+            </motion.span>
+          </a>
           </div>
         </motion.div>
       </div>

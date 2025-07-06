@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect, useRef } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
 
@@ -19,7 +18,7 @@ export default function ClientLogos() {
   return (
     <section className="w-full py-16 bg-gradient-to-r from-black to-gray-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-5"></div>
-
+      
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         <motion.h2
           ref={ref}
@@ -40,18 +39,18 @@ export default function ClientLogos() {
           {clients.map((client, i) => (
             <div
               key={i}
-              className="flex items-center justify-center min-w-[200px] h-20 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 px-8"
+              className="flex items-center justify-center min-w-[200px] h-20 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 px-8"
             >
               <span className="text-white font-medium">{client}</span>
             </div>
           ))}
         </div>
-
+        
         <div className="absolute top-0 flex space-x-16 animate-marquee2">
           {clients.map((client, i) => (
             <div
               key={i}
-              className="flex items-center justify-center min-w-[200px] h-20 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 px-8"
+              className="flex items-center justify-center min-w-[200px] h-20 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 px-8"
             >
               <span className="text-white font-medium">{client}</span>
             </div>

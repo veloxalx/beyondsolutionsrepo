@@ -29,7 +29,7 @@ const PremiumClientLogos = () => {
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4" id="trust">
             Trusted by Industry Leaders
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">

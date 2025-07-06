@@ -173,7 +173,7 @@ const SuperiorResults = () => {
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-10 tracking-tight leading-tight">
-            <span className="block bg-gradient-to-r from-white via-orange-400 to-amber-300 bg-clip-text text-transparent bg-300% animate-gradient-x">
+            <span className="block bg-gradient-to-r from-white via-orange-400 to-amber-300 bg-clip-text text-transparent bg-300% animate-gradient-x" id='results'>
               Superior Results for
             </span>
             <span className="block bg-gradient-to-r from-orange-500 via-amber-400 to-orange-300 bg-clip-text text-transparent animate-gradient-x">

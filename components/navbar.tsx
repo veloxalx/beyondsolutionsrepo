@@ -28,40 +28,45 @@ export default function Navbar() {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a
-                  href="/about"
+                  href="#trust"
                   className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
-                  About
+                  Trusted by Industry Leaders 
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a
-                  href="/what-we-do"
+                  href="#results"
                   className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
-                  What we do
+                  Superior Results
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a
-                  href="/gallery"
+                  href="#awards"
                   className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
-                  Gallery
+                  Awards
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a
-                  href="/contact"
+                  href="#contact"
                   className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
-                  Contact
+                  Contact Us
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </div>
 
               {/* Get in Touch Button */}
               <div className="hidden md:block ml-4 lg:ml-6">
-                <button className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-400 hover:via-orange-500 hover:to-orange-600 text-white rounded-full px-4 lg:px-6 py-2 font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-105 border border-orange-400/30 text-sm whitespace-nowrap">
+                <a
+                  href="https://wa.me/1234567890" // Replace with your WhatsApp number
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-400 hover:via-orange-500 hover:to-orange-600 text-white rounded-full px-4 lg:px-6 py-2 font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-105 border border-orange-400/30 text-sm whitespace-nowrap"
+                >
                   Get in Touch
-                </button>
+                </a>
               </div>
 
               {/* Mobile menu button */}
@@ -149,7 +154,10 @@ export default function Navbar() {
               </a>
               
               <div className="pt-3">
-                <button
+                <a
+                  href="https://wa.me/1234567890" // Replace with your WhatsApp number
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`w-full bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-400 hover:via-orange-500 hover:to-orange-600 text-white rounded-lg py-3 font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-105 border border-orange-400/30 text-sm transform ${
                     isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                   }`}
@@ -157,7 +165,7 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Get in Touch
-                </button>
+                </a>
               </div>
             </div>
           </div>

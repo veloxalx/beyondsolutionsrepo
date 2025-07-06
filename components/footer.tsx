@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Facebook,
   Twitter,
@@ -121,7 +121,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed" id="contact">
               We help{" "}
               <span className="text-orange-400 font-semibold">
                 elite organizations
@@ -139,7 +139,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className={`w-9 h-9 rounded-lg bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 flex items-center justify-center hover:bg-gradient-to-r hover:${gradient} transition-all duration-300 group hover:transform hover:scale-110 hover:shadow-lg`}
+                  className="w-9 h-9 rounded-lg bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 flex items-center justify-center hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-500 transition-all duration-300 group hover:transform hover:scale-110 hover:shadow-lg"
                   aria-label={label}
                 >
                   <Icon className="h-4 w-4 text-gray-400 group-hover:text-white transition-colors" />
@@ -252,75 +252,66 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Contact Information */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-gray-700/50">
-          <div className="flex items-start gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Mail className="h-4 w-4 text-white" />
-            </div>
-            <div>
-              <p className="text-gray-400 text-xs mb-1">Email Us</p>
-              <p className="text-white text-sm font-semibold group-hover:text-orange-400 transition-colors">
-                elite@beyondsolutions.com
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            {phoneNumbers.map((phone, index) => (
-              <div key={index} className="flex items-start gap-3 group">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Phone className="h-4 w-4 text-white" />
-                </div>
-                <div>
-                  <p className="text-gray-400 text-xs mb-1">Call Us</p>
-                  <p className="text-white text-sm font-semibold group-hover:text-orange-400 transition-colors">
-                    {phone.number} {phone.name && `– ${phone.name}`}
-                  </p>
-                </div>
+        {/* Contact Information - Fixed Layout */}
+        <div className="py-8 border-t border-gray-700/50">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Email */}
+            <div className="flex items-start gap-3 group">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Mail className="h-4 w-4 text-white" />
               </div>
-            ))}
-          </div>
+                            <div>
+                <h4 className="font-semibold text-white">Email</h4>
+                <p className="text-gray-400 text-sm">
+                  <a href="mailto:hello@beyondsolutions.lk" className="hover:text-orange-400 transition-colors duration-300">
+                    hello@beyondsolutions.lk
+                  </a>
+                </p>
+              </div>
+            </div>
 
-          <div className="flex items-start gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-orange-600 to-red-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <MapPin className="h-4 w-4 text-white" />
+            {/* Phone Numbers */}
+            <div className="flex items-start gap-3 group">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Phone className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-white">Call Us</h4>
+                <ul className="text-gray-400 text-sm space-y-1">
+                  {phoneNumbers.map((phone, i) => (
+                    <li key={i}>
+                      <span className="text-white font-medium">{phone.name ? `${phone.name}: ` : ""}</span>
+                      <a href={`tel:${phone.number.replace(/\s/g, "")}`} className="hover:text-orange-400 transition-colors duration-300">
+                        {phone.number}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div>
-              <p className="text-gray-400 text-xs mb-1">Visit Us</p>
-              <p className="text-white text-sm font-semibold group-hover:text-orange-400 transition-colors">
-                181, Temple Road, Kalutara North
-                <br />
-              </p>
+
+            {/* Location */}
+            <div className="flex items-start gap-3 group">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <MapPin className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-white">Head Office</h4>
+                <p className="text-gray-400 text-sm">
+                  No 23, Palm Grove,<br />
+                  Colombo 03,<br />
+                  Sri Lanka
+                </p>
+              </div>
             </div>
+
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="pt-6 border-t border-gray-700/50 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center">
-              <Trophy className="h-3 w-3 text-white" />
-            </div>
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Beyond Solutions.
-              <span className="text-orange-400 font-semibold ml-1">
-                The Premier Business Transformation Partner.
-              </span>
-            </p>
-          </div>
-
-          <div className="flex gap-6">
-            {["Privacy Policy", "Terms of Service"].map((item, i) => (
-              <a
-                key={i}
-                href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                className="text-gray-400 hover:text-orange-400 transition-colors font-medium text-sm"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
+        {/* Bottom Footer Note */}
+        <div className="text-center text-gray-500 text-xs pt-8 border-t border-gray-700/50 mt-8">
+          © {new Date().getFullYear()} Beyond Solutions. All rights reserved.
         </div>
       </div>
     </footer>
