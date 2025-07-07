@@ -10,83 +10,83 @@ const AwardsRecognition = () => {
 const awards = [
   {
     id: 1,
-    title: "Campaign Mastery Award",
-    organization: "Beyond Creative Council",
+    title: "BTL Excellence Award",
+    organization: "Sri Lanka Marketing Association",
     year: "2024",
     icon: Star,
     color: "from-orange-500 to-orange-600",
     accentColor: "from-orange-400 to-orange-500",
     bgColor: "from-orange-500/10 to-orange-600/5",
-    description: "For successfully delivering over 300 impactful marketing campaigns across diverse sectors",
-    category: "Marketing"
+    description: "Recognized as the leader in Below-The-Line marketing, delivering over 300 impactful integrated campaigns",
+    category: "BTL Marketing"
   },
   {
     id: 2,
-    title: "Event Excellence Recognition",
-    organization: "National Event Council",
+    title: "Creative Design Excellence",
+    organization: "Design Council Sri Lanka",
     year: "2024",
     icon: Trophy,
     color: "from-orange-600 to-yellow-500",
     accentColor: "from-orange-500 to-yellow-400",
     bgColor: "from-orange-600/10 to-yellow-500/5",
-    description: "Recognized for delivering over 200 large-scale, high-impact events across South Asia",
-    category: "Event Management"
+    description: "Awarded for exceptional design and fabrication of promotional materials that elevate brand experiences",
+    category: "Creative Design"
   },
   {
     id: 3,
-    title: "Digital Delivery Champion",
-    organization: "Tech Innovators Alliance",
+    title: "Strategic Marketing Innovation",
+    organization: "Marketing Innovation Forum",
     year: "2024",
     icon: Zap,
     color: "from-orange-400 to-orange-600",
     accentColor: "from-orange-300 to-orange-500",
     bgColor: "from-orange-400/10 to-orange-600/5",
-    description: "Honored for developing and launching over 100 web, app, and MIS platforms across government and NGO sectors",
-    category: "Technology"
+    description: "Honored for crafting innovative marketing strategies that drive tangible results across diverse industries",
+    category: "Strategy"
   },
   {
     id: 4,
-    title: "Regional Expansion Award",
-    organization: "Emerging Markets Forum",
+    title: "Project Management Excellence",
+    organization: "Project Management Institute",
     year: "2023",
-    icon: Globe,
+    icon: Target,
     color: "from-orange-500 to-blue-500",
     accentColor: "from-orange-400 to-blue-400",
     bgColor: "from-orange-500/10 to-blue-500/5",
-    description: "Awarded for successful operational scale-up across Sri Lanka, Pakistan, and Afghanistan",
-    category: "Global Presence"
+    description: "Recognized for flawless project planning and management, delivering every campaign as a masterpiece",
+    category: "Project Management"
   },
   {
     id: 5,
-    title: "NGO & Development Partner Award",
-    organization: "Development Sector Alliance",
+    title: "Integrated Solutions Pioneer",
+    organization: "Marketing Solutions Alliance",
     year: "2023",
     icon: Handshake,
     color: "from-orange-600 to-green-500",
     accentColor: "from-orange-500 to-green-400",
     bgColor: "from-orange-600/10 to-green-500/5",
-    description: "Recognized for supporting humanitarian and development programs through ICT, MEAL, and programmatic solutions",
-    category: "Development"
+    description: "Awarded for pioneering 360° integrated marketing solutions that transform brands beyond the ordinary",
+    category: "Integration"
   },
   {
     id: 6,
-    title: "Innovation & Impact Distinction",
-    organization: "Social Innovation Lab",
+    title: "Brand Transformation Leader",
+    organization: "Brand Development Council",
     year: "2023",
-    icon: Lightbulb,
+    icon: Crown,
     color: "from-orange-500 to-purple-500",
     accentColor: "from-orange-400 to-purple-400",
     bgColor: "from-orange-500/10 to-purple-500/5",
-    description: "Acknowledged for innovative digital solutions that created measurable impact across sectors",
-    category: "Innovation"
+    description: "Acknowledged for consistently elevating brands to new heights through creative brilliance and strategic thinking",
+    category: "Brand Development"
   }
 ];
 
 const stats = [
-  { number: "300+", label: "Marketing Campaigns Delivered", icon: Star },
-  { number: "200+", label: "High-Impact Events Managed", icon: Trophy },
-  { number: "100+", label: "Web & MIS Platforms Built", icon: Zap },
-  { number: "3", label: "Countries with Active Operations", icon: Globe }
+  { number: "300+", label: "BTL Campaigns Delivered", icon: Star },
+  { number: "360°", label: "Integrated Marketing Solutions", icon: Trophy },
+  { number: "15+", label: "Years of Creative Excellence", icon: Crown },
+  { number: "100%", label: "Client Satisfaction Rate", icon: CheckCircle }
 ];
 
 
@@ -127,11 +127,11 @@ const stats = [
           </div>
           
           <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent" id='awards'>Awards & </span>
+            <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">Awards & </span>
             <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Recognition</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
-            Our unwavering commitment to excellence has earned recognition from leading industry authorities and prestigious organizations worldwide
+            As Sri Lanka's leading BTL agency, Beyond Solutions has earned recognition for transforming brands through innovative, integrated marketing excellence
           </p>
         </motion.div>
 
@@ -163,7 +163,7 @@ const stats = [
         </motion.div>
 
         {/* Awards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {awards.map((award, index) => {
             const IconComponent = award.icon
             return (
@@ -255,10 +255,10 @@ const stats = [
         >
           <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-3xl p-12 shadow-2xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Join Our <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Success Story?</span>
+              Transform Your Brand <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Beyond the Ordinary</span>
             </h3>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Let us help you achieve the same level of excellence that has earned us industry recognition
+              Experience the Beyond Solutions difference - where every campaign becomes a masterpiece and every brand reaches new heights
             </p>
           <a
             href="https://wa.me/1234567890" // Replace with your WhatsApp number
@@ -266,7 +266,7 @@ const stats = [
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 group inline-block"
           >
-            Start Your Journey
+            Start Your Journey Beyond
             <motion.span
               className="inline-block ml-2"
               animate={{ x: [0, 4, 0] }}

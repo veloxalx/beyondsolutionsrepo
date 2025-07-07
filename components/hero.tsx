@@ -302,7 +302,7 @@ const Hero = () => {
                   className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"
                   style={{ animationDelay: "0.5s" }}
                 />
-                Global Presence
+                Established in 2018
               </span>
               <span className="flex items-center gap-2">
                 <div

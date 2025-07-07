@@ -18,6 +18,7 @@ import AwardsRecognition from "@/components/awards-recognition";
 import Hero from "@/components/hero";
 import CTASection from "@/components/cta-section";
 import WhatsAppContact from "@/components/whatsapp_contact";
+import ServiceGallery from "@/components/gallery";
 
 const fadeInVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -81,6 +82,9 @@ export default function Home() {
         </FadeInSection> */}
         <FadeInSection delay={0.6}>
           <EliteCaseStudies />
+        </FadeInSection>
+            <FadeInSection delay={0.6}>
+          <ServiceGallery />
         </FadeInSection>
 
         {/* <FadeInSection delay={0.5}>
