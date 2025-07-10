@@ -126,7 +126,7 @@ const stats = [
             <span className="text-white text-sm font-semibold tracking-wide">INDUSTRY RECOGNITION</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight" id='awards'>
             <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">Awards & </span>
             <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Recognition</span>
           </h2>
