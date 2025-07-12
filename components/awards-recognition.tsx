@@ -253,29 +253,27 @@ const stats = [
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-20"
         >
-          <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-3xl p-12 shadow-2xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+            <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-3xl p-12 shadow-2xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Transform Your Brand <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Beyond the Ordinary</span>
             </h3>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Experience the Beyond Solutions difference - where every campaign becomes a masterpiece and every brand reaches new heights
             </p>
-          <a
-            href="https://wa.me/1234567890" // Replace with your WhatsApp number
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 group inline-block"
-          >
-            Start Your Journey Beyond
-            <motion.span
+            <a
+              href="/contact"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 group inline-block"
+            >
+              Start Your Journey Beyond
+              <motion.span
               className="inline-block ml-2"
               animate={{ x: [0, 4, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-            >
+              >
               →
-            </motion.span>
-          </a>
-          </div>
+              </motion.span>
+            </a>
+            </div>
         </motion.div>
       </div>
     </section>

@@ -314,17 +314,15 @@ const ServiceGallery = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/1234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 inline-flex items-center justify-center gap-2"
+              href="/contact"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 inline-flex items-center justify-center gap-2"
               >
-                Start Your Project
-                <ArrowRight className="w-5 h-5" />
+              Start Your Project
+              <ArrowRight className="w-5 h-5" />
               </a>
               <button className="bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 inline-flex items-center justify-center gap-2">
-                View All Projects
-                <ExternalLink className="w-5 h-5" />
+              View All Projects
+              <ExternalLink className="w-5 h-5" />
               </button>
             </div>
           </div>

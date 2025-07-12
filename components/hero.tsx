@@ -490,16 +490,19 @@ const Hero = () => {
           }`}
           style={{ transitionDelay: "1.5s" }}
         >
-          <button className="bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-black px-6 sm:px-10 lg:px-14 py-4 sm:py-5 lg:py-7 rounded-full text-sm sm:text-lg lg:text-xl shadow-2xl border-2 border-orange-400/40 group relative overflow-hidden transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-orange-500/50">
+            <button
+            className="bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-black px-6 sm:px-10 lg:px-14 py-4 sm:py-5 lg:py-7 rounded-full text-sm sm:text-lg lg:text-xl shadow-2xl border-2 border-orange-400/40 group relative overflow-hidden transition-all duration-500 hover:scale-110 hover:-translate-y-2 hover:shadow-orange-500/50"
+            onClick={() => window.location.href = "/contact"}
+            >
             <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             <span className="relative flex items-center justify-center gap-2 sm:gap-3 lg:gap-4">
               <span className="hidden sm:inline">
-                Schedule Elite Consultation
+              Schedule Elite Consultation
               </span>
               <span className="sm:hidden">Get Consultation</span>
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:translate-x-3 transition-transform duration-300" />
             </span>
-          </button>
+            </button>
 
           <button className="px-6 sm:px-10 lg:px-14 py-4 sm:py-5 lg:py-7 rounded-full border-2 border-orange-500/60 text-orange-300 hover:bg-orange-500/20 backdrop-blur-md font-black transition-all duration-500 bg-black/50 hover:scale-110 hover:-translate-y-2 hover:border-orange-400/80 hover:text-orange-200 hover:shadow-2xl hover:shadow-orange-500/30 relative overflow-hidden group text-sm sm:text-lg lg:text-xl">
             <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/10 to-orange-500/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />

@@ -83,7 +83,7 @@ export default function Home() {
         <FadeInSection delay={0.6}>
           <EliteCaseStudies />
         </FadeInSection>
-            <FadeInSection delay={0.6}>
+        <FadeInSection delay={0.6}>
           <ServiceGallery />
         </FadeInSection>
 

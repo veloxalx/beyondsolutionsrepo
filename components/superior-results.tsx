@@ -294,7 +294,10 @@ const SuperiorResults = () => {
 
         {/* Enhanced Call to Action */}
         <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{transitionDelay: '1.5s'}}>
-          <div className="group inline-flex items-center gap-4 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 hover:from-orange-500 hover:via-amber-400 hover:to-orange-400 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40 cursor-pointer relative overflow-hidden">
+            <a
+            href="/contact"
+            className="group inline-flex items-center gap-4 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 hover:from-orange-500 hover:via-amber-400 hover:to-orange-400 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/40 cursor-pointer relative overflow-hidden"
+            >
             <span className="relative z-10">Discover Your Potential</span>
             
             {/* Animated arrow */}
@@ -304,7 +307,7 @@ const SuperiorResults = () => {
             
             {/* Shimmer effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-          </div>
+            </a>
           
             <p className="text-gray-400 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
             Our market leadership stems from our commitment to excellence. Get in touch with us today and experience the extraordinary impact of our ATL and BTL campaigns.

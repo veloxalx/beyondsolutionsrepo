@@ -238,12 +238,10 @@ export default function ExclusiveProcess() {
             Join the exclusive circle of organizations that have achieved
             unprecedented success through our proprietary methodology.
           </p>
-          <a
-            href="https://wa.me/1234567890" // Replace with your WhatsApp number
-            target="_blank"
-            rel="noopener noreferrer"
+            <a
+            href="/contact"
             className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-black font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 group inline-block"
-          >
+            >
             Start Your Elite Journey
             <motion.span
               className="inline-block ml-2"
@@ -252,7 +250,7 @@ export default function ExclusiveProcess() {
             >
               →
             </motion.span>
-          </a>
+            </a>
         </motion.div>
       </div>
     </section>
