@@ -49,7 +49,7 @@ export default function Navbar() {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="text-white/90 hover:text-orange-400 font-medium transition-all duration-300 hover:scale-105 relative group text-sm whitespace-nowrap"
                 >
                   Contact Us

@@ -1,6 +1,5 @@
 "use client"
 import Footer from "@/components/footer";
-import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import WhatsAppContact from "@/components/whatsapp_contact";
 import { useState } from "react";
