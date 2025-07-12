@@ -1,85 +1,107 @@
 import React, { useState, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { Camera, Award, Music, Palette, Crown, Eye, ArrowRight, Play, ExternalLink, Star, TrendingUp, Users, Calendar } from 'lucide-react'
+import { Camera, Award, Music, Palette, Crown, Star, ArrowRight, Eye, ExternalLink, TrendingUp, Users, Calendar } from 'lucide-react'
 
 const ServiceGallery = () => {
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, threshold: 0.1 })
   const [hoveredProject, setHoveredProject] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState('all')
+  const [imageErrors, setImageErrors] = useState({})
 
   const projects = [
     {
       id: 1,
       title: "Prime Group Awards Ceremony 2018",
       category: "ceremonies",
-      image: "/api/placeholder/600/400",
-      description: "A prestigious awards ceremony showcasing our expertise in large-scale event management and ceremonial excellence",
+      image: "/images/case-studies/prime.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop",
+      description: "Prime Group needed a prestigious awards ceremony that would celebrate their achievements while reinforcing their brand excellence and corporate values to stakeholders and employees.",
       services: ["Event Planning", "Stage Design", "Audio Visual", "Logistics"],
       year: "2018",
       icon: Award,
       color: "from-orange-500 to-orange-600",
-      bgColor: "from-orange-500/10 to-orange-600/5"
+      bgColor: "from-orange-500/10 to-orange-600/5",
+      company: "Prime Group",
+      industry: "Corporate Events",
+      results: ["500+ attendees including industry leaders", "95% positive feedback from participants"]
     },
     {
       id: 2,
       title: "Sathosa Idam Nidhanaya - Season 3",
       category: "campaigns",
-      image: "/api/placeholder/600/400",
-      description: "A comprehensive BTL campaign that transformed brand engagement through innovative marketing strategies",
-      services: ["BTL Marketing", "Campaign Strategy", "Brand Activation", "Digital Integration"],
+      image: "/images/case-studies/sathosa.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=400&fit=crop",
+      description: "Sathosa required a captivating television production for Season 3 of their popular program, needing creative content that would engage audiences while promoting their brand values.",
+      services: ["Television Production", "Content Development", "Scriptwriting", "Post-Production"],
       year: "2023",
       icon: TrendingUp,
       color: "from-orange-600 to-yellow-500",
-      bgColor: "from-orange-600/10 to-yellow-500/5"
+      bgColor: "from-orange-600/10 to-yellow-500/5",
+      company: "Sathosa",
+      industry: "Retail & Entertainment",
+      results: ["Successfully completed full season production", "High viewer engagement and ratings"]
     },
     {
       id: 3,
       title: "Stax Masquerade Dance",
       category: "events",
-      image: "/api/placeholder/600/400",
-      description: "An enchanting dance event that showcased our creative event conceptualization and flawless execution",
+      image: "/images/case-studies/stax.jpg",
+      fallbackImage: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=400&fit=crop",
+      description: "Stax Entertainment wanted to create an unforgettable masquerade dance event that would set new standards for luxury entertainment experiences in the market.",
       services: ["Event Conceptualization", "Creative Design", "Entertainment Management", "Venue Setup"],
       year: "2023",
       icon: Music,
       color: "from-orange-400 to-orange-600",
-      bgColor: "from-orange-400/10 to-orange-600/5"
+      bgColor: "from-orange-400/10 to-orange-600/5",
+      company: "Stax Entertainment",
+      industry: "Entertainment & Events",
+      results: ["300+ guests in attendance", "Sold-out event with waiting list"]
     },
     {
       id: 4,
-      title: "Designer Stalls",
+      title: "Designer Stalls Exhibition",
       category: "fabrication",
-      image: "/api/placeholder/600/400",
-      description: "Premium designer stalls that demonstrate our expertise in creative fabrication and promotional material design",
+      image: "/images/case-studies/stalls/stall1.png",
+      fallbackImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop",
+      description: "Multiple fashion designers needed an elegant platform to showcase their collections, requiring sophisticated stall designs that would enhance their brand presentation and attract customers.",
       services: ["Stall Design", "Fabrication", "Branding", "Installation"],
       year: "2023",
       icon: Palette,
       color: "from-orange-500 to-blue-500",
-      bgColor: "from-orange-500/10 to-blue-500/5"
+      bgColor: "from-orange-500/10 to-blue-500/5",
+      company: "Various Designers",
+      industry: "Fashion & Design",
+      results: ["50+ designers successfully showcased", "40% increase in sales compared to previous exhibitions"]
     },
     {
       id: 5,
-      title: "Corporate Ceremonies",
+      title: "Premium Corporate Ceremonies",
       category: "ceremonies",
-      image: "/api/placeholder/600/400",
-      description: "Elite corporate ceremonies that reflect our mastery in delivering sophisticated and memorable events",
+      image: "/images/case-studies/stalls/stall2.png",
+      fallbackImage: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop",
+      description: "Various corporations needed sophisticated ceremony planning for milestone celebrations, product launches, and corporate gatherings that would reflect their brand excellence.",
       services: ["Corporate Events", "Protocol Management", "VIP Coordination", "Media Management"],
       year: "2024",
       icon: Crown,
       color: "from-orange-600 to-purple-500",
-      bgColor: "from-orange-600/10 to-purple-500/5"
+      bgColor: "from-orange-600/10 to-purple-500/5",
+      company: "Multiple Corporate Clients",
+      industry: "Corporate Events",
+      results: ["25+ successful ceremonies executed", "98% client retention rate"]
     },
     {
       id: 6,
       title: "Brand Activation Events",
       category: "campaigns",
-      image: "/api/placeholder/600/400",
+      image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&h=400&fit=crop",
+      fallbackImage: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600&h=400&fit=crop",
       description: "Dynamic brand activation campaigns that create lasting impressions and drive meaningful engagement",
       services: ["Brand Activation", "Experiential Marketing", "Consumer Engagement", "ROI Tracking"],
       year: "2024",
       icon: Star,
       color: "from-orange-500 to-green-500",
-      bgColor: "from-orange-500/10 to-green-500/5"
+      bgColor: "from-orange-500/10 to-green-500/5",
+      company: "Various Clients",
+      industry: "Marketing & Advertising",
+      results: ["Multiple successful activations", "Enhanced brand visibility"]
     }
   ]
 
@@ -102,11 +124,12 @@ const ServiceGallery = () => {
     { number: "1000+", label: "Events Managed", icon: Users }
   ]
 
+  const handleImageError = (projectId) => {
+    setImageErrors(prev => ({ ...prev, [projectId]: true }))
+  }
+
   return (
-    <section 
-      ref={sectionRef}
-      className="w-full py-32 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden"
-    >
+    <section className="w-full py-32 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
@@ -129,12 +152,7 @@ const ServiceGallery = () => {
 
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         {/* Header Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 shadow-lg shadow-orange-500/25 mb-6">
             <Camera className="w-5 h-5 text-white" />
             <span className="text-white text-sm font-semibold tracking-wide">OUR PORTFOLIO</span>
@@ -147,23 +165,15 @@ const ServiceGallery = () => {
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light">
             Get to know about us and how we made a breakthrough to the Digital marketing industry in a short time span
           </p>
-        </motion.div>
+        </div>
 
         {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-        >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/60 backdrop-blur-sm shadow-xl shadow-black/20 border border-orange-500/20 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 group hover:border-orange-400/40"
               >
                 <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform duration-300">
@@ -171,18 +181,13 @@ const ServiceGallery = () => {
                 </div>
                 <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent mb-2">{stat.number}</div>
                 <div className="text-gray-300 font-medium">{stat.label}</div>
-              </motion.div>
+              </div>
             )
           })}
-        </motion.div>
+        </div>
 
         {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -196,18 +201,17 @@ const ServiceGallery = () => {
               {category.label} <span className="text-sm opacity-75">({category.count})</span>
             </button>
           ))}
-        </motion.div>
+        </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => {
             const IconComponent = project.icon
+            const hasImageError = imageErrors[project.id]
+            
             return (
-              <motion.div
+              <div
                 key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.1 * index }}
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
                 className="group relative"
@@ -220,24 +224,35 @@ const ServiceGallery = () => {
                   
                   {/* Image Section */}
                   <div className="relative h-48 bg-gradient-to-br from-gray-700 to-gray-800 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-600/30 mix-blend-overlay"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className="w-10 h-10 text-white" />
-                      </div>
-                    </div>
+                    {!hasImageError ? (
+                      <>
+                        <img
+                          src={imageErrors[project.id] ? project.fallbackImage : project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          onError={() => handleImageError(project.id)}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-600/30 mix-blend-overlay"></div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-600/30 mix-blend-overlay"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform duration-300`}>
+                            <IconComponent className="w-10 h-10 text-white" />
+                          </div>
+                        </div>
+                      </>
+                    )}
                     
-                    {/* Overlay with Play Button */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={hoveredProject === project.id ? { opacity: 1 } : { opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute inset-0 bg-black/60 flex items-center justify-center"
-                    >
+                    {/* Overlay with Eye Icon */}
+                    <div className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${
+                      hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
+                    }`}>
                       <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 group-hover:scale-110 transition-transform duration-300">
                         <Eye className="w-8 h-8 text-white" />
                       </div>
-                    </motion.div>
+                    </div>
                     
                     {/* Year Badge */}
                     <div className="absolute top-4 right-4">
@@ -277,28 +292,19 @@ const ServiceGallery = () => {
                     </div>
                     
                     {/* View Project Button */}
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 flex items-center justify-center gap-2"
-                    >
+                    <button className="w-full mt-4 px-4 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 flex items-center justify-center gap-2 hover:scale-105">
                       View Project
                       <ArrowRight className="w-4 h-4" />
-                    </motion.button>
+                    </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )
           })}
         </div>
 
         {/* Bottom CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-20"
-        >
+        <div className="text-center mt-20">
           <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-3xl p-12 shadow-2xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Create Your <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Next Masterpiece?</span>
@@ -322,7 +328,7 @@ const ServiceGallery = () => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

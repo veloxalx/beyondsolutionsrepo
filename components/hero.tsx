@@ -20,6 +20,7 @@ const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [progressWidth, setProgressWidth] = useState(0);
+  const [particleCount, setParticleCount] = useState(12);
   const heroRef = useRef(null);
   const intervalRef = useRef(null);
 
@@ -89,6 +90,21 @@ const Hero = () => {
         "radial-gradient(circle at 60% 60%, rgba(251, 146, 60, 0.08) 0%, transparent 50%)",
     },
   ];
+
+  // Handle responsive particle count
+  useEffect(() => {
+    const handleResize = () => {
+      setParticleCount(window.innerWidth < 640 ? 6 : 12);
+    };
+
+    // Set initial count
+    handleResize();
+    
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Enhanced auto-rotation with progress tracking
   useEffect(() => {
@@ -195,8 +211,8 @@ const Hero = () => {
           style={{ animationDelay: "4s" }}
         />
 
-        {/* Enhanced floating particles - fewer on mobile */}
-        {[...Array(window.innerWidth < 640 ? 6 : 12)].map((_, i) => (
+        {/* Enhanced floating particles - responsive count */}
+        {[...Array(particleCount)].map((_, i) => (
           <div
             key={i}
             className="absolute animate-float opacity-40 sm:opacity-60"
@@ -494,7 +510,6 @@ const Hero = () => {
           </button>
         </div>
       </div>
-
       <style jsx>{`
         @keyframes fade-in {
           from {
