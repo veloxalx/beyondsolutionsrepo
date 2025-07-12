@@ -8,7 +8,7 @@ const WhatsAppContact = () => {
   const [isOnline, setIsOnline] = useState(true);
 
   // Your WhatsApp number (replace with actual number)
-  const whatsappNumber = "1234567890"; // Format: country code + number without + or spaces
+  const whatsappNumber = "94772771224"; // Format: country code + number, no + or spaces
 
   // Pre-defined message (optional)
   const defaultMessage =
