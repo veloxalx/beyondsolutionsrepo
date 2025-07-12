@@ -306,9 +306,13 @@ const SuperiorResults = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
           </div>
           
-          <p className="text-gray-400 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
-            Join the <span className="text-orange-400 font-semibold">500+ elite organizations</span> already experiencing transformational growth with our proven methodologies
-          </p>
+            <p className="text-gray-400 text-sm sm:text-base mt-6 max-w-2xl mx-auto leading-relaxed">
+            Our market leadership stems from our commitment to excellence. Get in touch with us today and experience the extraordinary impact of our ATL and BTL campaigns.
+            </p>
+            <div className="mt-4 text-gray-300 text-sm sm:text-base font-medium">
+            Imesh Silva<br />
+            <span className="text-orange-400">Founder / Director</span>
+            </div>
           
           {/* Trust indicators */}
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-8 text-gray-500 text-xs sm:text-sm">

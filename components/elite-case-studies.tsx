@@ -134,7 +134,7 @@ export default function EliteCaseStudies() {
   const [activeCaseStudy, setActiveCaseStudy] = useState(caseStudies[0])
 
   return (
-    <section className="w-full py-32 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
+    <section className="w-full py-32 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden" id="schedule-form">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-[#F5A623] to-[#FF4D00] rounded-full blur-[150px] opacity-10 -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-[#F5A623] to-[#FF4D00] rounded-full blur-[150px] opacity-10 translate-y-1/2 -translate-x-1/2"></div>
