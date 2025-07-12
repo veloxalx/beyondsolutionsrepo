@@ -320,13 +320,13 @@ const Hero = () => {
                 />
                 Established in 2018
               </span>
-              <span className="flex items-center gap-2">
+                <span className="flex items-center gap-2">
                 <div
                   className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"
                   style={{ animationDelay: "1s" }}
                 />
-                24/7 Support
-              </span>
+                Officially Incorporated as LLC (2021)
+                </span>
             </div>
           </div>
         </div>

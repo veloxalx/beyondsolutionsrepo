@@ -314,7 +314,7 @@ const SuperiorResults = () => {
             </p>
             <div className="mt-4 text-gray-300 text-sm sm:text-base font-medium">
             Imesh Silva<br />
-            <span className="text-orange-400">Founder / Director</span>
+            <span className="text-orange-400 font-bold">- Founder / Director</span>
             </div>
           
           {/* Trust indicators */}
