@@ -16,7 +16,7 @@ export default function Footer() {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (email) {
       setIsSubscribed(true);
@@ -149,6 +149,7 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
+          {/*
           <div className="lg:col-span-2">
             <h3 className="font-bold text-lg mb-6 bg-gradient-to-r from-white to-orange-300 bg-clip-text text-transparent flex items-center gap-2">
               <div className="w-0.5 h-6 bg-gradient-to-b from-orange-500 to-amber-500 rounded-full"></div>
@@ -172,8 +173,10 @@ export default function Footer() {
               )}
             </ul>
           </div>
+          */}
 
           {/* Solutions Links */}
+          {/*
           <div className="lg:col-span-2">
             <h3 className="font-bold text-lg mb-6 bg-gradient-to-r from-white to-orange-300 bg-clip-text text-transparent flex items-center gap-2">
               <div className="w-0.5 h-6 bg-gradient-to-b from-amber-500 to-orange-500 rounded-full"></div>
@@ -203,6 +206,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+          */}
 
           {/* Newsletter Subscription */}
           <div className="lg:col-span-4">
