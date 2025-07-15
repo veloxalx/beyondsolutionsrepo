@@ -120,11 +120,11 @@ const ServiceGallery = () => {
   const stats = [
     { number: "500+", label: "Projects Delivered", icon: Calendar },
     { number: "98%", label: "Client Satisfaction", icon: Star },
-    { number: "15+", label: "Years of Excellence", icon: TrendingUp },
+    { number: "7+", label: "Years of Excellence", icon: TrendingUp },
     { number: "1000+", label: "Events Managed", icon: Users }
   ]
 
-  const handleImageError = (projectId) => {
+  const handleImageError = (projectId:string) => {
     setImageErrors(prev => ({ ...prev, [projectId]: true }))
   }
 

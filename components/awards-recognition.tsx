@@ -85,7 +85,7 @@ const awards = [
 const stats = [
   { number: "300+", label: "BTL Campaigns Delivered", icon: Star },
   { number: "360°", label: "Integrated Marketing Solutions", icon: Trophy },
-  { number: "15+", label: "Years of Creative Excellence", icon: Crown },
+  { number: "7+", label: "Years of Creative Excellence", icon: Crown },
   { number: "100%", label: "Client Satisfaction Rate", icon: CheckCircle }
 ];
 

@@ -321,7 +321,7 @@ const SuperiorResults = () => {
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mt-8 text-gray-500 text-xs sm:text-sm">
             <span className="flex items-center gap-2">
               <div className="w-3 sm:w-4 h-3 sm:h-4 bg-green-500 rounded-full"></div>
-              SL20 Approved
+              Top 20 Companies Approved
             </span>
             <span className="flex items-center gap-2">
               <div className="w-3 sm:w-4 h-3 sm:h-4 bg-blue-500 rounded-full"></div>

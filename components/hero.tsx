@@ -311,21 +311,21 @@ const Hero = () => {
             >
               <span className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                SL20 Trusted
+                Trusted by Top 20 Companies
               </span>
               <span className="flex items-center gap-2">
                 <div
                   className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"
                   style={{ animationDelay: "0.5s" }}
                 />
-                Established in 2018
+                Since 2018
               </span>
                 <span className="flex items-center gap-2">
                 <div
                   className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"
                   style={{ animationDelay: "1s" }}
                 />
-                Officially Incorporated as LLC (2021)
+                ----
                 </span>
             </div>
           </div>
