@@ -25,7 +25,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="w-full min-h-screen py-10 md:py-16 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden flex flex-col ">
+    <section className="w-full min-h-screen py-5 md:py-16 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden flex flex-col">
       <Navbar />
       <WhatsAppContact />
       {/* Decorative gradients */}
@@ -33,18 +33,23 @@ export default function ContactForm() {
       <div className="absolute top-1/4 left-1/3 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-orange-600/20 rounded-full blur-3xl pointer-events-none"></div>
       <div className="container px-4 md:px-6 mx-auto relative z-10 flex-1 flex items-center justify-center">
-        <div className="max-w-2xl w-full mx-auto bg-gray-900/90 backdrop-blur-2xl rounded-3xl p-6 sm:p-12 border border-orange-500/30 shadow-2xl shadow-orange-500/10">
+        <div className="max-w-2xl w-full mx-auto bg-gray-900/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-12 border border-orange-500/40 shadow-2xl shadow-orange-500/20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent mb-10 text-center tracking-tight drop-shadow-lg">
             Contact Us
           </h2>
           {submitted ? (
-            <div className="text-center text-orange-400 font-semibold py-12 text-xl">
-              Thank you for reaching out! We'll get back to you soon.
+            <div className="flex flex-col items-center justify-center py-16">
+              <div className="text-orange-400 font-bold text-2xl mb-4">
+                Thank you for reaching out!
+              </div>
+              <div className="text-orange-200 text-lg">
+                We'll get back to you soon.
+              </div>
             </div>
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="space-y-7 sm:space-y-8 mb-12"
+              className="space-y-8 mb-24"
               autoComplete="off"
             >
               <div>
@@ -61,7 +66,7 @@ export default function ContactForm() {
                   required
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full px-5 py-4 rounded-2xl bg-gray-800 text-white border border-orange-500/40 focus:border-orange-500 outline-none transition-all placeholder:text-gray-400 text-base shadow-sm"
+                  className="w-full px-5 py-4 rounded-2xl bg-gray-800 text-white border border-orange-500/40 focus:border-orange-500 outline-none transition-all placeholder:text-gray-400 text-base shadow-sm hover:border-orange-400 focus:ring-2 focus:ring-orange-500"
                   placeholder="Your Name"
                   autoComplete="name"
                 />
@@ -80,7 +85,7 @@ export default function ContactForm() {
                   required
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full px-5 py-4 rounded-2xl bg-gray-800 text-white border border-orange-500/40 focus:border-orange-500 outline-none transition-all placeholder:text-gray-400 text-base shadow-sm"
+                  className="w-full px-5 py-4 rounded-2xl bg-gray-800 text-white border border-orange-500/40 focus:border-orange-500 outline-none transition-all placeholder:text-gray-400 text-base shadow-sm hover:border-orange-400 focus:ring-2 focus:ring-orange-500"
                   placeholder="you@email.com"
                   autoComplete="email"
                 />
@@ -99,7 +104,7 @@ export default function ContactForm() {
                   required
                   value={form.subject}
                   onChange={handleChange}
-                  className="w-full px-5 py-4 rounded-2xl bg-gray-800 text-white border border-orange-500/40 focus:border-orange-500 outline-none transition-all placeholder:text-gray-400 text-base shadow-sm"
+                  className="w-full px-5 py-4 rounded-2xl bg-gray-800 text-white border border-orange-500/40 focus:border-orange-500 outline-none transition-all placeholder:text-gray-400 text-base shadow-sm hover:border-orange-400 focus:ring-2 focus:ring-orange-500"
                   placeholder="Subject"
                 />
               </div>
@@ -117,13 +122,13 @@ export default function ContactForm() {
                   value={form.message}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full px-5 py-4 rounded-2xl bg-gray-800 text-white border border-orange-500/40 focus:border-orange-500 outline-none transition-all resize-none placeholder:text-gray-400 text-base shadow-sm"
+                  className="w-full px-5 py-4 rounded-2xl bg-gray-800 text-white border border-orange-500/40 focus:border-orange-500 outline-none transition-all resize-none placeholder:text-gray-400 text-base shadow-sm hover:border-orange-400 focus:ring-2 focus:ring-orange-500"
                   placeholder="Your message..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-400 hover:via-orange-500 hover:to-orange-600 text-white font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/30 hover:scale-105 border border-orange-400/40 text-lg tracking-wide"
+                className="w-full bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-400 hover:via-orange-500 hover:to-orange-600 text-white font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-orange-500/30 hover:scale-105 border border-orange-400/40 text-lg tracking-wide focus:outline-none focus:ring-2 focus:ring-orange-500"
               >
                 Submit
               </button>
@@ -131,8 +136,10 @@ export default function ContactForm() {
           )}
         </div>
       </div>
-     <div className="flex-1" />
-  <Footer />
+      <div className="flex-1" />
+      <div style={{ marginTop: "40px" }}>
+        <Footer />
+      </div>
     </section>
   );
 }

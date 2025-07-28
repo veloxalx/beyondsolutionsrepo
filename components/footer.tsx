@@ -30,16 +30,18 @@ export default function Footer() {
       Icon: Facebook,
       label: "Facebook",
       gradient: "from-blue-500 to-blue-600",
+      link:"https://www.facebook.com/beyondsolutions.lk"
     },
-    { Icon: Twitter, label: "Twitter", gradient: "from-sky-400 to-sky-500" },
     {
       Icon: Instagram,
       label: "Instagram",
+      link:"https://www.instagram.com/beyondsolutionslk/?hl=en",
       gradient: "from-pink-500 to-purple-500",
     },
     {
       Icon: Linkedin,
       label: "LinkedIn",
+      link:"https://lk.linkedin.com/in/gayan-perera-5662351b5",
       gradient: "from-blue-600 to-blue-700",
     },
   ];
@@ -135,10 +137,12 @@ export default function Footer() {
             </p>
 
             <div className="flex gap-2">
-              {socialLinks.map(({ Icon, label, gradient }, i) => (
+              {socialLinks.map(({ Icon, label, gradient, link }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 flex items-center justify-center hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-500 transition-all duration-300 group hover:transform hover:scale-110 hover:shadow-lg"
                   aria-label={label}
                 >
@@ -268,8 +272,8 @@ export default function Footer() {
                             <div>
                 <h4 className="font-semibold text-white">Email</h4>
                 <p className="text-gray-400 text-sm">
-                  <a href="mailto:hello@beyondsolutions.lk" className="hover:text-orange-400 transition-colors duration-300">
-                    hello@beyondsolutions.lk
+                  <a href="mailto:requests@beyondsolutions.com" className="hover:text-orange-400 transition-colors duration-300">
+                    requests@beyondsolutions.com
                   </a>
                 </p>
               </div>
